@@ -49,12 +49,32 @@ html {
     height: 10px;
     background-color: #4CAF50;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 4px solid white;
 }
 
 .home-title {
+    position: relative;
     font-size: 48px;
     color: #d0d0d0;
+}
+
+.home-title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    width: 11px;
+    height: 11px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: #ea868f;
+    opacity: .75;
+    transition: width 0.3s ease;
+}
+
+.content {
+    height: 160px;
 }
 
 h1 {
@@ -108,6 +128,38 @@ a {
     height: 200px;
 }
 
+.card-container-wrapper {
+    margin: 0px -70px 10px -70px;
+    overflow-x: hidden;
+    padding-left: 70px;
+    height: 130px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #555;
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.75rem;
+    padding: 20px 0;
+}
+
 @media (max-width: 950px) {
     .container {
         width: 95%;
@@ -135,9 +187,5 @@ a {
 
     p {
         font-size: 14px;
-    }
-
-    .ZaiZai{
-        width: 30%;
     }
 }
