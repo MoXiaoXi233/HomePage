@@ -169,6 +169,7 @@ a {
     right: 40px;
     width: 200px;
     height: 200px;
+    cursor:pointer
 }
 
 .card-container-wrapper {
