@@ -136,7 +136,12 @@ p {
 }
 
 .footer {
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+info {
+    margin-top: 20px;
+    color: var(--text2-color)
 }
 
 nav ul {
