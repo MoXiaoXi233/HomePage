@@ -1,3 +1,46 @@
+:root {
+    --background-color: #f6f6F6F6;
+    --pure-color: #ffffff;
+    --card-color: #ffffff;
+    --card2-color: #fbfbfb;
+    --pure-gery-color: #f5f5f5;
+    --border-color: #ddd;
+    --line-color: #ebebeb;
+    --nav-color: #e4e6e7;
+    --nav-text-color: #374043;
+    --text-color: #333;
+    --text2-color: #444;
+    --hover-color: #f8f8f8;
+    --weak-text-color: #d0d0d0;
+    /* Light 颜色变量 */
+    --themecolor: #ea868f;
+}
+
+
+[data-theme="dark"] {
+    --background-color: #1d1f20;
+    --pure-color: #f2f2f2;
+    --card-color: #2b2b2b;
+    --card2-color: #2e2e2e;
+    --pure-gery-color: #424242;
+    --border-color: #333739;
+    --line-color: #363a3c;
+    --nav-color: #262a2b;
+    --nav-text-color: #c1bcb4;
+    --text-color: #c1bcb4;
+    --text2-color: #bdb7af;
+    --hover-color: #262a2b;
+    --weak-text-color: #a1a1a1;
+
+    .ZaiZai {
+        filter: invert(100%);
+    }
+
+    /* Dark 颜色变量 */
+
+    --themecolor: #b45864;
+}
+
 body,
 html {
     margin: 0;
@@ -7,14 +50,14 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f6f6F6F6;
+    background-color: var(--background-color);
     font-family: 'LXGW WenKai GB';
     font-weight: 400
 }
 
 .container {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
     box-shadow: 0 0 6px #00000008;
     padding: 40px 70px 40px 70px;
@@ -49,13 +92,13 @@ html {
     height: 10px;
     background-color: #4CAF50;
     border-radius: 50%;
-    border: 4px solid white;
+    border: 4px solid var(--card-color);
 }
 
 .home-title {
     position: relative;
     font-size: 48px;
-    color: #d0d0d0;
+    color: var(--weak-text-color);
 }
 
 .home-title::after {
@@ -68,7 +111,7 @@ html {
     height: 11px;
     pointer-events: none;
     border-radius: 50%;
-    background: #ea868f;
+    background: var(--themecolor);
     opacity: .75;
     transition: width 0.3s ease;
 }
@@ -78,13 +121,13 @@ html {
 }
 
 h1 {
-    color: #444;
+    color: var(--text-color);
     font-size: 56px;
     margin-bottom: 10px;
 }
 
 p {
-    color: #666;
+    color: var(--text2-color);
     margin-block: 6px;
 }
 
@@ -106,13 +149,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #666;
+    color: var(--nav-text-color);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #333;
+    color: var(--text-color);
 }
 
 a {
@@ -137,12 +180,13 @@ a {
 
 .card-title {
     font-size: 18px;
+    color: var(--text-color);
     margin: 15px 0;
 }
 
 .card-description {
     font-size: 14px;
-    color: #555;
+    color: var(--text2-color);
 }
 
 .swiper-container {
@@ -154,8 +198,8 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #fff;
-    border: 1px solid #ddd;
+    background: var(--card2-color);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
     padding: 20px 0;
 }
@@ -189,3 +233,95 @@ a {
         font-size: 14px;
     }
 }
+
+@font-face {
+	font-family: 'fontello';
+	src: url('../fonts/fontello.eot?3760722');
+	src: url('../fonts/fontello.eot?3760722#iefix') format('embedded-opentype'),
+		 url('../fonts/fontello.woff2?3760722') format('woff2'),
+		 url('../fonts/fontello.woff?3760722') format('woff'),
+		 url('../fonts/fontello.ttf?3760722') format('truetype'),
+		 url('../fonts/fontello.svg?3760722#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+  }
+  /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+  /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+  /*
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+	  font-family: 'fontello';
+	  src: url('../font/fontello.svg?3760722#fontello') format('svg');
+	}
+  }
+  */
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+  
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	/* opacity: .8; */
+  
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+  
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+  
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2em;
+  
+	/* you can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+  
+	/* Font smoothing. That was taken from TWBS */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  
+	/* Uncomment for 3D effect */
+	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  }
+  
+  .icon-heart-circled:before { content: '\e800'; } /* '' */
+  .icon-emo-wink:before { content: '\e801'; } /* '' */
+  .icon-chat:before { content: '\e802'; } /* '' */
+  .icon-article:before { content: '\e803'; } /* '' */
+  .icon-record-outline:before { content: '\e804'; } /* '' */
+  .icon-search:before { content: '\e805'; } /* '' */
+  .icon-emo-surprised:before { content: '\e806'; } /* '' */
+  .icon-emo-tongue:before { content: '\e807'; } /* '' */
+  .icon-emo-coffee:before { content: '\e808'; } /* '' */
+  .icon-ok-circle:before { content: '\e809'; } /* '' */
+  .icon-cancel-circle:before { content: '\e80a'; } /* '' */
+  .icon-attention:before { content: '\e80b'; } /* '' */
+  .icon-minus-circle:before { content: '\e80c'; } /* '' */
+  .icon-clock:before { content: '\e80d'; } /* '' */
+  .icon-flash:before { content: '\e80e'; } /* '' */
+  .icon-up-open:before { content: '\e80f'; } /* '' */
+  .icon-down-open:before { content: '\e810'; } /* '' */
+  .icon-check:before { content: '\e811'; } /* '' */
+  .icon-cog:before { content: '\e813'; } /* '' */
+  .icon-wrench:before { content: '\e814'; } /* '' */
+  .icon-lightbulb:before { content: '\e815'; } /* '' */
+  .icon-mail:before { content: '\e816'; } /* '' */
+  .icon-zhihu:before { content: '\e817'; } /* '' */
+  .icon-bilibili:before { content: '\e818'; } /* '' */
+  .icon-cc:before { content: '\e819'; } /* '' */
+  .icon-163music:before { content: '\e81a'; } /* '' */
+  .icon-sun-inv:before { content: '\e81b'; } /* '' */
+  .icon-moon-inv:before { content: '\e81c'; } /* '' */
+  .icon-auto:before { content: '\e81d'; } /* '' */
+  .icon-sustar:before { content: '\e81e'; } /* '' */
+  .icon-attach-outline:before { content: '\e81f'; } /* '' */
+  .icon-info-circled:before { content: '\f085'; } /* '' */
+  .icon-github-circled:before { content: '\f09b'; } /* '' */
+  .icon-hashtag:before { content: '\f292'; } /* '' */
+  .icon-telegram:before { content: '\f2c6'; } /* '' */
+  .icon-twitter-bird:before { content: '\f303'; } /* '' */
