@@ -1,5 +1,5 @@
 // script.js
-function MoSuToast(options) {
+function MoxToast(options) {
     // 默认参数
     const defaults = {
         message: "This is a toast message",

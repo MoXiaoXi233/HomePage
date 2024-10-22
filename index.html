@@ -9,8 +9,8 @@
     <link rel="stylesheet preconnect" href="https://minio.moxiify.cn/chinese-font/LXGWWenKaiGB-Regular/result.css"
         type="text/css" media="all" onload="this.media='all'">
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/MoDesign.css" />
-    <script src="js/MoDesign.js"></script>
+    <link rel="stylesheet" href="css/MoxDesign.css" />
+    <script src="js/MoxDesign.js"></script>
 </head>
 <!-- Initial Theme Script -->
 <script>
@@ -41,17 +41,17 @@
 
         if (currentTheme === 'light') {
             newTheme = 'dark';
-            MoSuToast({
+            MoxToast({
                 message: "已切换至深色模式"
             });
         } else if (currentTheme === 'dark') {
             newTheme = 'auto';
-            MoSuToast({
+            MoxToast({
                 message: "模式将跟随系统 ㆆᴗㆆ"
             });
         } else {
             newTheme = 'light';
-            MoSuToast({
+            MoxToast({
                 message: "已切换至浅色模式"
             });
         }
