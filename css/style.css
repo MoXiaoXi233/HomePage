@@ -131,6 +131,7 @@ html {
 .content {
     height: 160px;
     width: 100%;
+    width: 100%;
 }
 
 h1 {
@@ -205,6 +206,7 @@ a {
 
 .card-container-wrapper {
     margin: 0px -70px 10px -70px;
+    overflow: hidden;
     overflow: hidden;
     padding-left: 70px;
     height: 130px;
