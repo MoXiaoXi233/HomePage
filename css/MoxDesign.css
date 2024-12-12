@@ -1,4 +1,4 @@
-#toast {
+#mox-toast {
     visibility: hidden;
     min-width: 250px;
     background-color: var(--card2-color);
@@ -12,104 +12,171 @@
     left: 50%;
     transform: translate(-50%, -50%);
     bottom: 45px;
-    font-size: 17px;
+    font-size: 0.95rem;
+    box-shadow: 0 0 6px #00000008;
+    line-height: normal;
+    will-change: transform, opacity;
 }
 
-#toast.show {
+#mox-toast.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s;
     animation: fadein 0.5s;
 }
 
-#toast.hide {
-    -webkit-animation: fadeout 0.5s;
+#mox-toast.hide {
     animation: fadeout 0.5s;
 }
 
-#toast.bottom {
+#mox-toast.bottom {
     bottom: 45px;
 }
 
-#toast.top {
+#mox-toast.top {
     top: 45px;
 }
 
-@-webkit-keyframes fadein {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
 @keyframes fadein {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
+    from {
+        opacity: 0;
+    }
 
-@-webkit-keyframes fadeout {
-    from {opacity: 1;}
-    to {opacity: 0;}
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeout {
-    from {opacity: 1;}
-    to {opacity: 0;}
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 
-#toast.bottom.show {
-    -webkit-animation: fadein-bottom 0.5s;
+#mox-toast.bottom.show {
     animation: fadein-bottom 0.5s;
 }
 
-#toast.bottom.hide {
-    -webkit-animation: fadeout-bottom 0.5s;
+#mox-toast.bottom.hide {
     animation: fadeout-bottom 0.5s;
 }
 
-#toast.top.show {
-    -webkit-animation: fadein-top 0.5s;
+#mox-toast.top.show {
     animation: fadein-top 0.5s;
 }
 
-#toast.top.hide {
-    -webkit-animation: fadeout-top 0.5s;
+#mox-toast.top.hide {
     animation: fadeout-top 0.5s;
 }
 
-@-webkit-keyframes fadein-bottom {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 45px; opacity: 1;}
-}
-
 @keyframes fadein-bottom {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 45px; opacity: 1;}
-}
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
 
-@-webkit-keyframes fadeout-bottom {
-    from {bottom: 45px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
+    to {
+        bottom: 45px;
+        opacity: 1;
+    }
 }
 
 @keyframes fadeout-bottom {
-    from {bottom: 45px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
-}
+    from {
+        bottom: 45px;
+        opacity: 1;
+    }
 
-@-webkit-keyframes fadein-top {
-    from {top: 0; opacity: 0;}
-    to {top: 45px; opacity: 1;}
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 
 @keyframes fadein-top {
-    from {top: 0; opacity: 0;}
-    to {top: 45px; opacity: 1;}
-}
+    from {
+        top: 0;
+        opacity: 0;
+    }
 
-@-webkit-keyframes fadeout-top {
-    from {top: 45px; opacity: 1;}
-    to {top: 0; opacity: 0;}
+    to {
+        top: 45px;
+        opacity: 1;
+    }
 }
 
 @keyframes fadeout-top {
-    from {top: 45px; opacity: 1;}
-    to {top: 0; opacity: 0;}
+    from {
+        top: 45px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+.mox-notification-container {
+    position: fixed;
+    z-index: 1000;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.mox-notification {
+    width: 300px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    background-color: var(--card2-color);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.mox-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mox-notification.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.mox-icon {
+    margin-right: 10px;
+}
+
+.mox-content {
+    flex-grow: 1;
+}
+
+.mox-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.mox-message {
+    font-size: 0.85rem;
+}
+
+.mox-close-btn {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+    font-size: 24px;
 }
