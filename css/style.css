@@ -130,6 +130,7 @@ html {
 
 .content {
     height: 160px;
+    width: 100%;
 }
 
 h1 {
@@ -186,6 +187,7 @@ a {
     right: 40px;
     width: 200px;
     height: 200px;
+<<<<<<< HEAD
     cursor: pointer;
 }
 
@@ -197,6 +199,17 @@ a {
     box-shadow: 0 0 6px #00000008;
     margin-top: 20px;
     padding: 20px;
+=======
+    cursor: pointer
+}
+
+.card-container-wrapper {
+    margin: 0px -70px 10px -70px;
+    overflow: hidden;
+    padding-left: 70px;
+    height: 130px;
+    width: calc(100% + 70px);
+>>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
 }
 
 .section h2 {
@@ -213,6 +226,7 @@ a {
     flex-wrap: wrap;
 }
 
+<<<<<<< HEAD
 .work-item,
 .self-host-item,
 .info-item {
@@ -233,6 +247,23 @@ a {
     .container,
     .section {
         width: 95%;
+=======
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    background: var(--card2-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 20px 0;
+}
+
+@media (max-width: 950px) {
+    .container {
+        width: 350px;
+>>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
         padding: 20px;
     }
 
@@ -259,10 +290,17 @@ a {
         font-size: 14px;
     }
 
+<<<<<<< HEAD
     .work-item,
     .self-host-item,
     .info-item {
         width: 100%;
+=======
+
+    .swiper-container {
+        width: 90%;
+
+>>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
     }
 }
 
@@ -270,23 +308,50 @@ a {
     font-family: 'fontello';
     src: url('../fonts/fontello.eot?3760722');
     src: url('../fonts/fontello.eot?3760722#iefix') format('embedded-opentype'),
+<<<<<<< HEAD
          url('../fonts/fontello.woff2?3760722') format('woff2'),
          url('../fonts/fontello.woff?3760722') format('woff'),
          url('../fonts/fontello.ttf?3760722') format('truetype'),
          url('../fonts/fontello.svg?3760722#fontello') format('svg');
+=======
+        url('../fonts/fontello.woff2?3760722') format('woff2'),
+        url('../fonts/fontello.woff?3760722') format('woff'),
+        url('../fonts/fontello.ttf?3760722') format('truetype'),
+        url('../fonts/fontello.svg?3760722#fontello') format('svg');
+>>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
     font-weight: normal;
     font-style: normal;
 }
 
+<<<<<<< HEAD
 [class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "fontello";
     font-style: normal;
     font-weight: normal;
+=======
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+	  font-family: 'fontello';
+	  src: url('../font/fontello.svg?3760722#fontello') format('svg');
+	}
+  }
+  */
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+
+>>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
     display: inline-block;
     text-decoration: inherit;
     width: 1em;
     margin-right: .2em;
     text-align: center;
+<<<<<<< HEAD
     line-height: 1em;
     margin-left: .2em;
     -webkit-font-smoothing: antialiased;
@@ -353,3 +418,209 @@ a {
 	background-clip: padding-box;
 	background-color: rgba(0, 0, 0, 0.30);
 }
+=======
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-heart-circled:before {
+    content: '\e800';
+}
+
+/* '' */
+.icon-emo-wink:before {
+    content: '\e801';
+}
+
+/* '' */
+.icon-chat:before {
+    content: '\e802';
+}
+
+/* '' */
+.icon-article:before {
+    content: '\e803';
+}
+
+/* '' */
+.icon-record-outline:before {
+    content: '\e804';
+}
+
+/* '' */
+.icon-search:before {
+    content: '\e805';
+}
+
+/* '' */
+.icon-emo-surprised:before {
+    content: '\e806';
+}
+
+/* '' */
+.icon-emo-tongue:before {
+    content: '\e807';
+}
+
+/* '' */
+.icon-emo-coffee:before {
+    content: '\e808';
+}
+
+/* '' */
+.icon-ok-circle:before {
+    content: '\e809';
+}
+
+/* '' */
+.icon-cancel-circle:before {
+    content: '\e80a';
+}
+
+/* '' */
+.icon-attention:before {
+    content: '\e80b';
+}
+
+/* '' */
+.icon-minus-circle:before {
+    content: '\e80c';
+}
+
+/* '' */
+.icon-clock:before {
+    content: '\e80d';
+}
+
+/* '' */
+.icon-flash:before {
+    content: '\e80e';
+}
+
+/* '' */
+.icon-up-open:before {
+    content: '\e80f';
+}
+
+/* '' */
+.icon-down-open:before {
+    content: '\e810';
+}
+
+/* '' */
+.icon-check:before {
+    content: '\e811';
+}
+
+/* '' */
+.icon-cog:before {
+    content: '\e813';
+}
+
+/* '' */
+.icon-wrench:before {
+    content: '\e814';
+}
+
+/* '' */
+.icon-lightbulb:before {
+    content: '\e815';
+}
+
+/* '' */
+.icon-mail:before {
+    content: '\e816';
+}
+
+/* '' */
+.icon-zhihu:before {
+    content: '\e817';
+}
+
+/* '' */
+.icon-bilibili:before {
+    content: '\e818';
+}
+
+/* '' */
+.icon-cc:before {
+    content: '\e819';
+}
+
+/* '' */
+.icon-163music:before {
+    content: '\e81a';
+}
+
+/* '' */
+.icon-sun-inv:before {
+    content: '\e81b';
+}
+
+/* '' */
+.icon-moon-inv:before {
+    content: '\e81c';
+}
+
+/* '' */
+.icon-auto:before {
+    content: '\e81d';
+}
+
+/* '' */
+.icon-sustar:before {
+    content: '\e81e';
+}
+
+/* '' */
+.icon-attach-outline:before {
+    content: '\e81f';
+}
+
+/* '' */
+.icon-info-circled:before {
+    content: '\f085';
+}
+
+/* '' */
+.icon-github-circled:before {
+    content: '\f09b';
+}
+
+/* '' */
+.icon-hashtag:before {
+    content: '\f292';
+}
+
+/* '' */
+.icon-telegram:before {
+    content: '\f2c6';
+}
+
+/* '' */
+.icon-twitter-bird:before {
+    content: '\f303';
+}
+
+/* '' */
+>>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
