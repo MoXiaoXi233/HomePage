@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet preconnect" href="https://minio.moxiify.cn/chinese-font/LXGWWenKaiGB-Regular/result.css"
         type="text/css" media="all" onload="this.media='all'">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/MoxDesign.css" />
     <script src="js/MoxDesign.js"></script>
 </head>
@@ -88,109 +87,60 @@
 </script>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="avatar-container">
-                <img src="MoXiiiiii.png" alt="Avatar" class="avatar">
+    <div class="Spec_Card">
+        <div class="container">
+            <div class="header">
+                <div class="avatar-container">
+                    <img src="MoXiiiiii.png" alt="Avatar" class="avatar">
+                </div>
+                <div class="home-title" id="home-title">Home Page</div>
             </div>
-            <div class="home-title" id="home-title">首页</div>
+            <div class="content" id="content">
+                <h1>Hi,</h1>
+                <p>这里是 MoXiify，你可以叫我墨希</p>
+                <p>很高兴认识你，这里仍在开发阶段，欢迎到处逛逛</p>
+                <p class="italic">I aspire to be a maverick, harnessing technology to reshape the world.</p>
+            </div>
+            <div class="footer">
+                <nav>
+                    <ul>
+                        <li><a href="#" onclick="loadContent('home')">首页</a></li>
+                        <li><a href="https://note.moxiify.cn">博客</a></li>
+                        <li><a href="#" onclick="loadContent('projects')">项目</a></li>
+                        <li><a href="#" onclick="loadContent('about')">关于</a></li>
+                    </ul>
+                </nav>
+                <info>© MoXiify <a href="https://icp.gov.moe/?keyword=20237807">萌ICP备20237807号</a></info>
+            </div>
+            <img src="2bzai.png" alt="ZaiZai" class="ZaiZai" onclick="toggleTheme()" aria-label="日夜切换">
         </div>
-        <div class="content" id="content">
-            <h1>Hi,</h1>
-            <p>这里是 MoXiify，你可以叫我墨希</p>
-            <p>很高兴认识你，这里仍在开发阶段，欢迎到处逛逛</p>
-            <p class="italic">I aspire to be a maverick, harnessing technology to reshape the world.</p>
-        </div>
-        <div class="footer">
-            <nav>
-                <ul>
-                    <li><a href="#" onclick="loadContent('home')">首页</a></li>
-                    <li><a href="https://note.moxiify.cn">博客</a></li>
-                    <li><a href="#" onclick="loadContent('projects')">项目</a></li>
-                    <li><a href="#" onclick="loadContent('about')">关于</a></li>
-                </ul>
-            </nav>
-            <info>© MoXiify <a href="https://icp.gov.moe/?keyword=20237807">萌ICP备20237807号</a></info>
-        </div>
-        <img src="2bzai.png" alt="ZaiZai" class="ZaiZai" onclick="toggleTheme()" aria-label="日夜切换">
     </div>
+    <div class="Common_Card">
+        <h2 style="text-align: center;">来看看我的作品吧</h2>
+        <div class="work-container">
+            <div class="work-item"></div>
+            <div class="work-item"></div>
+            <div class="work-item"></div>
+            <div class="work-item"></div>
+        </div>
+    </div>
+    <div class="Common_Card">
+        <h2 style="text-align: center;">我的自部署</h2>
+        <div class="self-host-container">
+            <div class="self-host-item"></div>
+        </div>
+    </div>
+    <div class="Common_Card">
+        <h2 style="text-align: center;">我的信息</h2>
+        <div class="info-container">
+            <div class="info-item"></div>
+        </div>
     </div>
 
-    <script>
-        function loadContent(page) {
-            var content = "";
-            var title = "";
-            var isHome = (page === 'home');
-
-            // 检查当前页面是否已经是首页
-            if (isHome && document.getElementById('home-title').innerText === "首页") {
-                MoxToast({
-                    message: "已经是首页了喂大笨蛋！"
-                });
-                return; // 如果已经是首页，则不继续执行
-            }
-            
-            switch (page) {
-                case 'home':
-                    content = "<h1>Hi,</h1><p>这里是 MoXiify，你可以叫我墨希</p><p>很高兴认识你，这里仍在开发阶段，欢迎到处逛逛</p><p class='italic'>I aspire to be a maverick, harnessing technology to reshape the world.</p>";
-                    title = "首页";
-                    break;
-                case 'blog':
-                    content = "<h1>博客</h1><p>这里是我的博客内容。</p>";
-                    title = "博客";
-                    break;
-                case 'projects':
-                    content = `
-                    <div class="card-container-wrapper">
-                        <div class="swiper-container" id="card-container">
-                            <div class="swiper-wrapper">
-                                <a href="https://github.com/MoXiaoXi233/PureSuck-theme" target="blank_" class="swiper-slide card">
-                                    <div class="card-title">PureSuck Theme</div>
-                                    <div class="card-description">一个简约雅观的 Typecho 主题</div>
-                                </a>
-                                <a href="https://github.com/MoXiaoXi233/HomePage" target="blank_" class="swiper-slide card">
-                                    <div class="card-title">HomePage</div>
-                                    <div class="card-description">个人自用的个人引导页</div>
-                                </a>
-                                <a href="#" target="blank_" class="swiper-slide card">
-                                    <div class="card-title">占位符</div>
-                                    <div class="card-description">只是为了展示这个地方可以拖动</div>
-                                </a>  
-                                <a href="#" target="blank_" class="swiper-slide card">
-                                    <div class="card-title">占位符</div>
-                                    <div class="card-description">只是为了展示这个地方可以拖动</div>
-                                </a>  
-                                <a href="#" target="blank_" class="swiper-slide card">
-                                    <div class="card-title">占位符</div>
-                                    <div class="card-description">只是为了展示这个地方可以拖动</div>
-                                </a>                                                            
-                            </div>
-                        </div>
-                    </div>
-                    <p>这有一些我开发的小玩意，希望你能喜欢，可以的话还请给我个Star☆</p>
-                
-                    `;
-                    title = "项目";
-                    break;
-                case 'about':
-                    content = "<p>关于自己的话写了很多很多，这里与 <a href='https://note.moxiify.cn/about.html' >希记</a> 的自我介绍不同</p><p>我总想：</p><p>- 我总想成为一个特立独行的人</p><p>- 我总想成为一个被他人依赖的人</p><p>- 我总想成为一个尽可能全能的人</p><p>我做的并不好，所以我幻想做好我自己，ㆆᴗㆆ</p>";
-                    title = "关于";
-                    break;
-                default:
-                    content = "<p>这里是 MoXiify，你可以叫我墨希</p><p>很高兴认识你，这里仍在开发阶段，欢迎到处逛逛</p><p class='italic'>I aspire to be a maverick, harnessing technology to reshape the world.</p>";
-                    title = "Hi,";
-            }
-            document.getElementById('content').innerHTML = content;
-            document.getElementById('home-title').innerText = title;
-
-            var swiper = new Swiper("#card-container", {
-                slidesPerView: 4,
-                spaceBetween: 30,
-                grabCursor: true,
-            });
-        }
-    </script>
-    <script src="js/swiper-bundle.min.js"></script>
+    <div>
+        尾部信息
+        一些信息一些信息一些信息一些信息一些信息
+    </div>
 </body>
 
 </html>
