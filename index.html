@@ -91,7 +91,7 @@
         <div class="container">
             <div class="header">
                 <div class="avatar-container">
-                    <img src="MoXiiiiii.png" alt="Avatar" class="avatar">
+                    <img src="images/MoXiwhite.webp" alt="Avatar" class="avatar">
                 </div>
                 <div class="home-title" id="home-title">Home Page</div>
             </div>
@@ -104,43 +104,81 @@
             <div class="footer">
                 <nav>
                     <ul>
-                        <li><a href="#" onclick="loadContent('home')">首页</a></li>
+                        <li><a href="#">首页</a></li>
                         <li><a href="https://note.moxiify.cn">博客</a></li>
-                        <li><a href="#" onclick="loadContent('projects')">项目</a></li>
-                        <li><a href="#" onclick="loadContent('about')">关于</a></li>
+                        <li><a href="#projects">项目</a></li>
+                        <li><a href="#about">关于</a></li>
                     </ul>
                 </nav>
                 <info>© MoXiify <a href="https://icp.gov.moe/?keyword=20237807">萌ICP备20237807号</a></info>
             </div>
-            <img src="2bzai.png" alt="ZaiZai" class="ZaiZai" onclick="toggleTheme()" aria-label="日夜切换">
+            <img src="images/2bzai.png" alt="LinePic" class="ZaiZai" onclick="toggleTheme()" aria-label="日夜切换">
         </div>
     </div>
-    <div class="Common_Card">
-        <h2 style="text-align: center;">来看看我的作品吧</h2>
-        <div class="work-container">
-            <div class="work-item"></div>
-            <div class="work-item"></div>
-            <div class="work-item"></div>
-            <div class="work-item"></div>
+
+    <div class="Common_Card" id="about">
+        <h2 style="text-align: center;">关于我</h2>
+        <!-- 第一个大卡片 -->
+        <div class="works-container single-column">
+            <div class="about-item main-about">
+                <div class="about-content">
+                    <br>
+                    <p>我总想：</p>
+                    <p>- 我总想成为一个特立独行的人</p>
+                    <p>- 我总想成为一个被他人依赖的人</p>
+                    <p>- 我总想成为一个尽可能全能的人</p>
+                    <p>我做的并不好，所以我幻想做好我自己，ㆆᴗㆆ</p>
+                    <br>
+                </div>
+                <img src="images/ACuteXi.png" alt="角色形象" class="LinePic">
+            </div>
+        </div>
+
+        <!-- 四个小卡片 -->
+        <div class="about-container double-column">
+            <div class="about-item">
+                <h3>与内心</h3>
+                <!-- <img src="" alt="内心插图"> -->
+            </div>
+            <div class="about-item">
+                <h3>与<span>她</span></h3>
+                <img src="images/ACuteSu.png" alt="她的插图" class="BoldPic">
+            </div>
+            <div class="about-item">
+                <h3>与朋友</h3>
+                <!-- <img src="" alt="朋友插图"> -->
+            </div>
+            <div class="about-item">
+                <h3>更多...</h3>
+                <!-- <img src="" alt="更多插图"> -->
+            </div>
         </div>
     </div>
-    <div class="Common_Card">
-        <h2 style="text-align: center;">我的自部署</h2>
-        <div class="self-host-container">
-            <div class="self-host-item"></div>
+
+    <div class="Common_Card" id="projects">
+        <h2 style="text-align: center;">一些作品展示</h2>
+        <div class="works-container single-column">
+            <div class="works-item">
+                <p>内容1</p>
+            </div>
         </div>
-    </div>
-    <div class="Common_Card">
-        <h2 style="text-align: center;">我的信息</h2>
-        <div class="info-container">
-            <div class="info-item"></div>
+        <div class="works-container triple-column">
+            <div class="works-item">
+                <p>内容2</p>
+            </div>
+            <div class="works-item">
+                <p>内容3</p>
+            </div>
+            <div class="works-item">
+                <p>内容4</p>
+            </div>
         </div>
     </div>
 
     <div>
-        尾部信息
-        一些信息一些信息一些信息一些信息一些信息
+        <p>持续开发中，Designed by MoXi，请勿转载</p>
     </div>
+
 </body>
 
 </html>

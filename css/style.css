@@ -30,8 +30,13 @@
     --hover-color: #262a2b;
     --weak-text-color: #a1a1a1;
 
-    .ZaiZai {
+    .ZaiZai,
+    .LinePic {
         filter: invert(100%);
+    }
+
+    .BoldPic {
+        filter: brightness(0.7);
     }
 
     --themecolor: #b45864;
@@ -50,6 +55,7 @@ html {
     font-family: 'LXGW WenKai GB';
     font-weight: 400;
     min-width: 950px;
+    scroll-behavior: smooth;
 }
 
 .Spec_Card {
@@ -57,13 +63,13 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 1092px;
 }
 
 .Common_Card {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 1092px;
     margin-bottom: 120px;
 }
 
@@ -118,13 +124,12 @@ html {
     display: block;
     position: absolute;
     bottom: 5px;
-    right: 0;
-    width: 11px;
+    width: 58px;
     height: 11px;
     pointer-events: none;
-    border-radius: 50%;
-    background: var(--themecolor);
-    opacity: .75;
+    border-radius: 0.45rem;
+    background: linear-gradient(to right, var(--themecolor), rgb(255 255 255 / 0%));
+    opacity: .55;
     transition: width 0.3s ease;
 }
 
@@ -138,6 +143,25 @@ h1 {
     color: var(--text-color);
     font-size: 56px;
     margin-bottom: 10px;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: var(--text-color);
+    font-size: 28px;
+}
+
+.about-item h3,
+.about-content,
+.works-item p,
+works-item h3 {
+    position: absolute;
+    left: 50px;
 }
 
 p {
@@ -188,19 +212,6 @@ a {
     right: 40px;
     width: 200px;
     height: 200px;
-<<<<<<< HEAD
-    cursor: pointer;
-}
-
-.section {
-    width: 950px;
-    background-color: var(--card2-color);
-    border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
-    box-shadow: 0 0 6px #00000008;
-    margin-top: 20px;
-    padding: 20px;
-=======
     cursor: pointer
 }
 
@@ -211,7 +222,6 @@ a {
     padding-left: 70px;
     height: 130px;
     width: calc(100% + 70px);
->>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
 }
 
 .section h2 {
@@ -220,117 +230,83 @@ a {
     margin-bottom: 20px;
 }
 
-.work-container,
-.self-host-container,
-.info-container {
+.works-container,
+.about-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-<<<<<<< HEAD
-.work-item,
-.self-host-item,
-.info-item {
-    background-color: var(--pure-color);
-    border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
-    width: 48%;
-    height: 200px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 6px #00000008;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--text2-color);
-}
-
-@media (max-width: 950px) {
-    .container,
-    .section {
-        width: 95%;
-=======
-.swiper-container {
     width: 100%;
+    max-width: 1092px;
+    box-sizing: border-box;
 }
 
-.swiper-slide {
-    text-align: center;
-    background: var(--card2-color);
+/* 基础卡片样式 */
+.works-item,
+.about-item {
+    background-color: var(--card-color);
     border: 1px solid var(--border-color);
     border-radius: 0.75rem;
-    padding: 20px 0;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .05);
+    transition: all .3s cubic-bezier(0.345, 0.045, 0.345, 1);
+    padding: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;  
 }
 
-@media (max-width: 950px) {
-    .container {
-        width: 350px;
->>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
-        padding: 20px;
-    }
+.works-item:hover,
+.about-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1px 6px 1px rgba(0, 0, 0, .06);
+}
 
-    .header {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0px;
-    }
+.about-item span {
+    color: #f08a8a;
+}
 
-    .home-title {
-        font-size: 36px;
-        margin-top: 20px;
-    }
+.about-item img {
+    position: absolute;
+    bottom: 0;
+    right: 46px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
 
-    .footer {
-        margin-top: 0px;
-    }
+/* 一排显示一个 */
+.single-column .works-item,
+.single-column .about-item {
+    flex: 0 0 calc(100% - 40px);
+}
 
-    h1 {
-        font-size: 28px;
-    }
+/* 一排显示两个 */
+.double-column .works-item,
+.double-column .about-item {
+    flex: 0 0 calc(48% - 30px);
+}
 
-    p {
-        font-size: 14px;
-    }
-
-<<<<<<< HEAD
-    .work-item,
-    .self-host-item,
-    .info-item {
-        width: 100%;
-=======
-
-    .swiper-container {
-        width: 90%;
-
->>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
-    }
+/* 一排显示三个 */
+.triple-column .works-item,
+.triple-column .about-item {
+    flex: 0 0 calc(31% - 27px);
 }
 
 @font-face {
     font-family: 'fontello';
     src: url('../fonts/fontello.eot?3760722');
     src: url('../fonts/fontello.eot?3760722#iefix') format('embedded-opentype'),
-<<<<<<< HEAD
-         url('../fonts/fontello.woff2?3760722') format('woff2'),
-         url('../fonts/fontello.woff?3760722') format('woff'),
-         url('../fonts/fontello.ttf?3760722') format('truetype'),
-         url('../fonts/fontello.svg?3760722#fontello') format('svg');
-=======
         url('../fonts/fontello.woff2?3760722') format('woff2'),
         url('../fonts/fontello.woff?3760722') format('woff'),
         url('../fonts/fontello.ttf?3760722') format('truetype'),
         url('../fonts/fontello.svg?3760722#fontello') format('svg');
->>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
     font-weight: normal;
     font-style: normal;
 }
 
-<<<<<<< HEAD
-[class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "fontello";
-    font-style: normal;
-    font-weight: normal;
-=======
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
@@ -347,80 +323,11 @@ a {
     font-style: normal;
     font-weight: normal;
 
->>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
     display: inline-block;
     text-decoration: inherit;
     width: 1em;
     margin-right: .2em;
     text-align: center;
-<<<<<<< HEAD
-    line-height: 1em;
-    margin-left: .2em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-heart-circled:before { content: '\e800'; } /* '' */
-.icon-emo-wink:before { content: '\e801'; } /* '' */
-.icon-chat:before { content: '\e802'; } /* '' */
-.icon-article:before { content: '\e803'; } /* '' */
-.icon-record-outline:before { content: '\e804'; } /* '' */
-.icon-search:before { content: '\e805'; } /* '' */
-.icon-emo-surprised:before { content: '\e806'; } /* '' */
-.icon-emo-tongue:before { content: '\e807'; } /* '' */
-.icon-emo-coffee:before { content: '\e808'; } /* '' */
-.icon-ok-circle:before { content: '\e809'; } /* '' */
-.icon-cancel-circle:before { content: '\e80a'; } /* '' */
-.icon-attention:before { content: '\e80b'; } /* '' */
-.icon-minus-circle:before { content: '\e80c'; } /* '' */
-.icon-clock:before { content: '\e80d'; } /* '' */
-.icon-flash:before { content: '\e80e'; } /* '' */
-.icon-up-open:before { content: '\e80f'; } /* '' */
-.icon-down-open:before { content: '\e810'; } /* '' */
-.icon-check:before { content: '\e811'; } /* '' */
-.icon-cog:before { content: '\e813'; } /* '' */
-.icon-wrench:before { content: '\e814'; } /* '' */
-.icon-lightbulb:before { content: '\e815'; } /* '' */
-.icon-mail:before { content: '\e816'; } /* '' */
-.icon-zhihu:before { content: '\e817'; } /* '' */
-.icon-bilibili:before { content: '\e818'; } /* '' */
-.icon-cc:before { content: '\e819'; } /* '' */
-.icon-163music:before { content: '\e81a'; } /* '' */
-.icon-sun-inv:before { content: '\e81b'; } /* '' */
-.icon-moon-inv:before { content: '\e81c'; } /* '' */
-.icon-auto:before { content: '\e81d'; } /* '' */
-.icon-sustar:before { content: '\e81e'; } /* '' */
-.icon-attach-outline:before { content: '\e81f'; } /* '' */
-.icon-info-circled:before { content: '\f085'; } /* '' */
-.icon-github-circled:before { content: '\f09b'; } /* '' */
-.icon-hashtag:before { content: '\f292'; } /* '' */
-.icon-telegram:before { content: '\f2c6'; } /* '' */
-.icon-twitter-bird:before { content: '\f303'; } /* '' */
-
-/* 细滚动条 */
-*::-webkit-scrollbar {
-	width: 12px;
-	height: 12px;
-}
-
-*::-webkit-scrollbar-button {
-	width: 0px;
-	height: 0px;
-	display: none;
-}
-
-*::-webkit-scrollbar-corner {
-	background-color: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-	border: 4px solid rgba(0, 0, 0, 0);
-	height: 6px;
-	border-radius: 25px;
-	background-clip: padding-box;
-	background-color: rgba(0, 0, 0, 0.30);
-}
-=======
     /* opacity: .8; */
 
     /* For safety - reset parent styles, that can break glyph codes*/
@@ -625,4 +532,27 @@ a {
 }
 
 /* '' */
->>>>>>> 37c3f60ffde4a575932d4a43cf79ae72fb323e3d
+
+/* 细滚动条 */
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+
+*::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    height: 6px;
+    border-radius: 25px;
+    background-clip: padding-box;
+    background-color: rgba(0, 0, 0, 0.30);
+}
