@@ -35,6 +35,10 @@
         filter: invert(100%);
     }
 
+    img {
+        filter: brightness(0.85);
+    }
+
     .BoldPic {
         filter: brightness(0.7);
     }
@@ -63,6 +67,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 25px;
     width: 1092px;
 }
 
@@ -154,12 +159,11 @@ h2 {
 h3 {
     color: var(--text-color);
     font-size: 28px;
+    margin: 15px 0;
 }
 
-.about-item h3,
 .about-content,
-.works-item p,
-works-item h3 {
+.works-content {
     position: absolute;
     left: 50px;
 }
@@ -255,7 +259,7 @@ a {
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
-    cursor: pointer;  
+    cursor: pointer;
 }
 
 .works-item:hover,

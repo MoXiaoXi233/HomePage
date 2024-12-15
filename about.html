@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>墨希小窝 - With Love</title>
+    <title>内心 - 墨希小窝</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet preconnect" href="https://minio.moxiify.cn/chinese-font/LXGWWenKaiGB-Regular/result.css"
         type="text/css" media="all" onload="this.media='all'">
@@ -86,31 +86,6 @@
             }
         });
     </script>
-
-    <script>
-        // 初始化 Pjax
-        document.addEventListener('DOMContentLoaded', function () {
-
-            var pjax = new Pjax({
-                history: true,
-                scrollRestoration: true,
-                cacheBust: false,
-                timeout: 6500,
-                elements: ["a:not([target='_blank'])"], // 只对非外链的a标签启用pjax
-                selectors: [ // 需要更新的元素选择器
-                    "title",
-                    "body"
-                ],
-            });
-
-            // 在页面加载完成后执行的函数
-            document.addEventListener('pjax:complete', function () {
-                // 更新主题图标
-                const savedTheme = localStorage.getItem('theme') || 'auto';
-                updateIcon(savedTheme);
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -120,7 +95,7 @@
                 <div class="avatar-container">
                     <img src="images/MoXiwhite.webp" alt="Avatar" class="avatar">
                 </div>
-                <div class="home-title" id="home-title">Home Page</div>
+                <div class="home-title" id="home-title">About Me</div>
             </div>
             <div class="content" id="content">
                 <h1>Hi,</h1>
@@ -134,7 +109,7 @@
                         <li><a href="index.html">首页</a></li>
                         <li><a href="https://note.moxiify.cn">博客</a></li>
                         <li><a href="#projects">项目</a></li>
-                        <li><a href="about.html#antilogy">关于</a></li>
+                        <li><a href="about.html">关于</a></li>
                     </ul>
                 </nav>
                 <info>© MoXiify <a href="https://icp.gov.moe/?keyword=20237807">萌ICP备20237807号</a></info>
@@ -147,21 +122,21 @@
         </div>
     </div>
 
-    <div class="Common_Card" id="about">
-        <h2 style="text-align: center;">关于我</h2>
+    <div class="Common_Card" id="antilogy">
+        <h2 style="text-align: center;">矛盾的我</h2>
         <!-- 第一个大卡片 -->
         <div class="works-container single-column">
             <div class="about-item main-about">
                 <div class="about-content">
                     <p>
-                    <p>我总想：</p>
-                    <p>- 我总想成为一个特立独行的人</p>
-                    <p>- 我总想成为一个被他人依赖的人</p>
-                    <p>- 我总想成为一个尽可能全能的人</p>
-                    <p>我做的并不好，所以我幻想做好我自己，ㆆᴗㆆ</p>
+                    <p>这里的介绍有别于 希记 中的我</p>
+                    <p>我是个很弱小很愚昧的人</p>
+                    <p>我会因为自己的小成就自傲</p>
+                    <p>关于此，我能写出很多我的故事，并且有许多美丽优雅的表达</p>
+                    <p>可惜这里的空白处太小，我写不下</p>
                     <p>
                 </div>
-                <img src="images/ACuteXi.png" alt="可爱希角色形象" class="LinePic">
+                <img src="images/mx-woof/woofx-3.png" style="right: 0;" alt="可爱希角色形象" class="LinePic">
             </div>
         </div>
 
@@ -169,56 +144,83 @@
         <div class="about-container double-column">
             <div class="about-item">
                 <div class="about-content">
-                    <h3>与内心</h3>
+                    <h3>自卑</h3>
+                    <p>从小的观念都教育着我友好与和谐</p>
+                    <p>却也塑造了我的懦弱</p>
+                    <p>总是笑着说要乐观和无畏</p>
+                    <p>当困难和压迫来到自己身上的适合，我不知所措</p>
                 </div>
-                <img src="images/ACuteHeart.png" style="right: 0;" alt="内心插图">
+                <!-- <img src="" alt="插图"> -->
             </div>
             <div class="about-item">
                 <div class="about-content">
-                    <h3>与<span>她</span></h3>
+                    <h3>友好</h3>
+                    <p>对于不同的人或事总是有第一友好的印象</p>
+                    <p>尽管可能下一秒就被劝退</p>
+                    <p>我说我啊</p>
+                    <p>能不能别这么善良</p>
                 </div>
-                <img src="images/ACuteSu.png" alt="她的插图" class="BoldPic">
+                <!-- <img src="" alt="插图"> -->
             </div>
             <div class="about-item">
                 <div class="about-content">
-                    <h3>与朋友</h3>
+                    <h3>双标</h3>
+                    <p>其实我也蛮了不起的</p>
+                    <p>偶尔也会看不起不如我或不友好的人</p>
+                    <p>这也蛮不公平的</p>
+                    <p>自己原来这么自私</p>
                 </div>
-                <!-- <img src="" alt="朋友插图"> -->
+                <!-- <img src="" alt="插图"> -->
             </div>
             <div class="about-item">
                 <div class="about-content">
-                    <h3>更多...</h3>
+                    <h3>伪自恋</h3>
+                    <p>我是帅哥一枚</p>
+                    <p>可惜不过是语言上的幼稚</p>
+                    <p>毕竟其实在现实和内心都不被承认的说辞</p>
+                    <p>是用于安慰自己的东西（不过希望你快来夸夸我）</p>
                 </div>
-                <!-- <img src="" alt="更多插图"> -->
+                <img src="images/mx-woof/woofx-1.png" style="top:15px; right:30px;" alt="插图">
             </div>
-        </div>
-    </div>
-
-    <div class="Common_Card" id="projects">
-        <h2 style="text-align: center;">一些作品展示</h2>
-        <div class="works-container single-column">
-            <div class="works-item">
-                <div class="works-content">
-                    <h3>PureSuck-theme</h3>
-                    <p>一个纯粹干净的博客主题，基于 Typecho 框架</p>
+            <div class="about-item">
+                <div class="about-content">
+                    <h3>泛二次元</h3>
+                    <p>不太喜欢深入一个圈子，又或圈地自萌</p>
+                    <p>否则总会遇到无法理解的事物</p>
+                    <p>ACG和相关文化是个很美好的产物</p>
+                    <p>但人多变味，莫名其妙的定义太多，享受作品本身就好</p>
                 </div>
+                <img src="images/mx-woof/woofx-6.png" style="top:15px; right:30px; width:125px; height:125px;" alt="插图">
             </div>
-        </div>
-        <div class="works-container triple-column">
-            <div class="works-item">
-                <div class="works-content">
-                    <p>什么也没有</p>
+            <div class="about-item">
+                <div class="about-content">
+                    <h3>特立独行</h3>
+                    <p>半个理想主义者</p>
+                    <p>讨厌形式但理解某些现状</p>
+                    <p>爱好折腾，信奉情怀和浪漫</p>
+                    <p>经常被自己的无能打压，也在有些小成功的时刻被幸福包裹</p>
                 </div>
+                <!-- <img src="" alt="插图"> -->
             </div>
-            <div class="works-item">
-                <div class="works-content">
-                    <p>什么也没有</p>
+            <div class="about-item">
+                <div class="about-content">
+                    <h3>内耗</h3>
+                    <p>一边质疑世上没有永恒的爱</p>
+                    <p>一边期待美好的事情发生</p>
+                    <p>我也不是不快乐</p>
+                    <p>只是在反复推开和自我怀疑</p>
                 </div>
+                <!-- <img src="" alt="插图"> -->
             </div>
-            <div class="works-item">
-                <div class="works-content">
-                    <p>什么也没有</p>
+            <div class="about-item">
+                <div class="about-content">
+                    <h3>假的理科生</h3>
+                    <p>逻辑思维差，理性思维差</p>
+                    <p>往往不喜欢用脑思考</p>
+                    <p>感觉更擅长的是理科边缘的一小部分</p>
+                    <p>并且喜欢这个标签...吧？</p>
                 </div>
+                <!-- <img src="" alt="插图"> -->
             </div>
         </div>
     </div>
