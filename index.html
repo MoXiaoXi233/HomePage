@@ -9,9 +9,12 @@
     <link rel="stylesheet preconnect" href="https://minio.moxiify.cn/chinese-font/LXGWWenKaiGB-Regular/result.css"
         type="text/css" media="all" onload="this.media='all'">
     <link rel="stylesheet" href="css/MoxDesign.css" />
+    <link rel="stylesheet" href="css/aos.css" />
     <script src="js/MoxDesign.js"></script>
     <script src="js/pjax.min.js"></script>
     <script src="js/pace.min.js"></script>
+    <script src="js/aos.js"></script>
+
     <!-- Initial Theme Script -->
     <script>
         (function () {
@@ -115,7 +118,7 @@
 
 <body>
     <div class="Spec_Card">
-        <div class="container">
+        <div class="container" data-aos="zoom-out">
             <div class="header">
                 <div class="avatar-container">
                     <img src="images/MoXiwhite.webp" alt="Avatar" class="avatar">
@@ -148,10 +151,10 @@
     </div>
 
     <div class="Common_Card" id="about">
-        <h2 style="text-align: center;">关于我</h2>
+        <h2>关于我</h2>
         <!-- 第一个大卡片 -->
-        <div class="works-container single-column">
-            <div class="about-item main-about">
+        <div class="grid-container single-column">
+            <div class="about-item main-about" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
                     <p>
                     <p>我总想：</p>
@@ -166,60 +169,90 @@
         </div>
 
         <!-- 四个小卡片 -->
-        <div class="about-container double-column">
-            <div class="about-item">
+        <div class="grid-container grid-4-6">
+            <div class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
-                    <h3>与内心</h3>
+                    <h2 class="no-decor">与内心</h2>
                 </div>
                 <img src="images/ACuteHeart.png" style="right: 0;" alt="内心插图">
             </div>
-            <div class="about-item">
+            <div class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
-                    <h3>与<span>她</span></h3>
+                    <h2 class="no-decor">与<span>她</span></h2>
                 </div>
                 <img src="images/ACuteSu.png" alt="她的插图" class="BoldPic">
             </div>
-            <div class="about-item">
+        </div>
+        <div class="grid-container grid-6-4">
+            <div class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
-                    <h3>与朋友</h3>
+                    <h2 class="no-decor">与朋友</h2>
                 </div>
                 <!-- <img src="" alt="朋友插图"> -->
             </div>
-            <div class="about-item">
+            <a href="about.html#antilogy" class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
-                    <h3>更多...</h3>
+                    <h2 class="no-decor">更多...</h2>
                 </div>
                 <!-- <img src="" alt="更多插图"> -->
-            </div>
+            </a>
         </div>
     </div>
 
     <div class="Common_Card" id="projects">
-        <h2 style="text-align: center;">一些作品展示</h2>
-        <div class="works-container single-column">
-            <div class="works-item">
+        <h2>作品</h2>
+        <div class="grid-container single-column">
+            <a href="https://github.com/MoXiaoXi233/PureSuck-theme" target="_blank" class="works-item"
+                data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="github-badge">
+                    <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z" />
+                    </svg>
+                    <span class="star-count">Loading...</span>
+                </div>
+                <svg class="tech-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 100 50">
+                    <path
+                        d="m7.579 10.123 14.204 0c4.169 0.035 7.19 1.237 9.063 3.604 1.873 2.367 2.491 5.6 1.855 9.699-0.247 1.873-0.795 3.71-1.643 5.512-0.813 1.802-1.943 3.427-3.392 4.876-1.767 1.837-3.657 3.003-5.671 3.498-2.014 0.495-4.099 0.742-6.254 0.742l-6.36 0-2.014 10.07-7.367 0 7.579-38.001 0 0m6.201 6.042-3.18 15.9c0.212 0.035 0.424 0.053 0.636 0.053 0.247 0 0.495 0 0.742 0 3.392 0.035 6.219-0.3 8.48-1.007 2.261-0.742 3.781-3.321 4.558-7.738 0.636-3.71 0-5.848-1.908-6.413-1.873-0.565-4.222-0.83-7.049-0.795-0.424 0.035-0.83 0.053-1.219 0.053-0.353 0-0.724 0-1.113 0l0.053-0.053" />
+                    <path
+                        d="m41.093 0 7.314 0-2.067 10.123 6.572 0c3.604 0.071 6.289 0.813 8.056 2.226 1.802 1.413 2.332 4.099 1.59 8.056l-3.551 17.649-7.42 0 3.392-16.854c0.353-1.767 0.247-3.021-0.318-3.763-0.565-0.742-1.784-1.113-3.657-1.113l-5.883-0.053-4.346 21.783-7.314 0 7.632-38.054 0 0" />
+                    <path
+                        d="m70.412 10.123 14.204 0c4.169 0.035 7.19 1.237 9.063 3.604 1.873 2.367 2.491 5.6 1.855 9.699-0.247 1.873-0.795 3.71-1.643 5.512-0.813 1.802-1.943 3.427-3.392 4.876-1.767 1.837-3.657 3.003-5.671 3.498-2.014 0.495-4.099 0.742-6.254 0.742l-6.36 0-2.014 10.07-7.367 0 7.579-38.001 0 0m6.201 6.042-3.18 15.9c0.212 0.035 0.424 0.053 0.636 0.053 0.247 0 0.495 0 0.742 0 3.392 0.035 6.219-0.3 8.48-1.007 2.261-0.742 3.781-3.321 4.558-7.738 0.636-3.71 0-5.848-1.908-6.413-1.873-0.565-4.222-0.83-7.049-0.795-0.424 0.035-0.83 0.053-1.219 0.053-0.353 0-0.724 0-1.113 0l0.053-0.053" />
+                </svg>
                 <div class="works-content">
-                    <h3>PureSuck-theme</h3>
+                    <h2 class="no-decor">PureSuck-theme</h2>
                     <p>一个纯粹干净的博客主题，基于 Typecho 框架</p>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="works-container triple-column">
-            <div class="works-item">
+        <div class="grid-container double-column grid-4-6">
+            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div class="works-content">
-                    <p>什么也没有</p>
+                    <p>尚未开发</p>
                 </div>
-            </div>
-            <div class="works-item">
+            </a>
+            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div class="works-content">
-                    <p>什么也没有</p>
+                    <p>尚未开发</p>
                 </div>
-            </div>
-            <div class="works-item">
+            </a>
+        </div>
+        <div class="grid-container triple-column">
+            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div class="works-content">
-                    <p>什么也没有</p>
+                    <p>尚未开发</p>
                 </div>
-            </div>
+            </a>
+            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="works-content">
+                    <p>尚未开发</p>
+                </div>
+            </a>
+            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="works-content">
+                    <p>尚未开发</p>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -227,6 +260,67 @@
         <p>持续开发中，Designed by MoXi，请勿转载</p>
     </div>
 
+
+    <script>
+        // 获取 GitHub Star 数量的函数
+        async function fetchGitHubStars(repo) {
+            try {
+                // 使用代理避免 CORS 问题（可选）
+                const proxyUrl = 'https://api.allorigins.win/raw?url=';
+                const response = await fetch(`${proxyUrl}https://api.github.com/repos/${repo}`);
+
+                if (!response.ok) throw new Error('Failed to fetch');
+                const data = await response.json();
+                return data.stargazers_count;
+            } catch (error) {
+                console.error('Error fetching GitHub stars:', error);
+                return null;
+            }
+        }
+
+        // DOM 加载完成后执行
+        document.addEventListener('DOMContentLoaded', async () => {
+            const badge = document.querySelector('.github-badge');
+            const countElement = document.querySelector('.star-count');
+
+            // 添加加载状态样式
+            badge.classList.add('loading');
+
+            // 获取仓库信息
+            const repo = 'MoXiaoXi233/PureSuck-theme';
+            const stars = await fetchGitHubStars(repo);
+
+            // 更新显示
+            if (stars !== null) {
+                countElement.textContent = stars.toLocaleString();
+                badge.title = `View ${repo} on GitHub`;
+                badge.style.cursor = 'pointer';
+
+                // 添加点击跳转
+                badge.addEventListener('click', () => {
+                    window.open(`https://github.com/${repo}`, '_blank');
+                });
+            } else {
+                countElement.textContent = 'N/A';
+                badge.style.opacity = '0.5';
+            }
+
+            badge.classList.remove('loading');
+        });
+    </script>
 </body>
+
+<footer>
+    <!-- AOS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 600,
+                delay: 0,
+            });
+        });
+    </script>
+</footer>
+
 
 </html>

@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>内心 - 墨希小窝</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet preconnect" href="https://minio.moxiify.cn/chinese-font/LXGWWenKaiGB-Regular/result.css"
-        type="text/css" media="all" onload="this.media='all'">
+    <link rel="stylesheet preconnect" href="https://minio.moxiify.cn/chinese-font/LXGWWenKaiGB-Regular/result.css" type="text/css" media="all" onload="this.media='all'">
     <link rel="stylesheet" href="css/MoxDesign.css" />
+    <link rel="stylesheet" href="css/aos.css" />
     <script src="js/MoxDesign.js"></script>
     <script src="js/pjax.min.js"></script>
     <script src="js/pace.min.js"></script>
+    <script src="js/aos.js"></script>
+
     <!-- Initial Theme Script -->
     <script>
         (function () {
@@ -86,11 +88,36 @@
             }
         });
     </script>
+
+    <script>
+        // 初始化 Pjax
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var pjax = new Pjax({
+                history: true,
+                scrollRestoration: true,
+                cacheBust: false,
+                timeout: 6500,
+                elements: ["a:not([target='_blank'])"], // 只对非外链的a标签启用pjax
+                selectors: [ // 需要更新的元素选择器
+                    "title",
+                    "body"
+                ],
+            });
+
+            // 在页面加载完成后执行的函数
+            document.addEventListener('pjax:complete', function () {
+                // 更新主题图标
+                const savedTheme = localStorage.getItem('theme') || 'auto';
+                updateIcon(savedTheme);
+            });
+        });
+    </script>
 </head>
 
 <body>
     <div class="Spec_Card">
-        <div class="container">
+        <div class="container" data-aos="zoom-out">
             <div class="header">
                 <div class="avatar-container">
                     <img src="images/MoXiwhite.webp" alt="Avatar" class="avatar">
@@ -123,10 +150,10 @@
     </div>
 
     <div class="Common_Card" id="antilogy">
-        <h2 style="text-align: center;">矛盾的我</h2>
+        <h2>矛盾的我</h2>
         <!-- 第一个大卡片 -->
-        <div class="works-container single-column">
-            <div class="about-item main-about">
+        <div class="grid-container">
+            <div class="about-item main-about" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
                     <p>
                     <p>这里的介绍有别于 希记 中的我</p>
@@ -141,87 +168,156 @@
         </div>
 
         <!-- 四个小卡片 -->
-        <div class="about-container double-column">
-            <div class="about-item">
-                <div class="about-content">
-                    <h3>自卑</h3>
-                    <p>从小的观念都教育着我友好与和谐</p>
-                    <p>却也塑造了我的懦弱</p>
-                    <p>总是笑着说要乐观和无畏</p>
-                    <p>当困难和压迫来到自己身上的适合，我不知所措</p>
+        <div class="grid-container grid-5-5">
+            <div class="info-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="info-card-inner">
+                    <div class="info-card-face info-card-face-front">
+                        <div class="info-content">
+                            <h3>自卑</h3>
+                        </div>
+                    </div>
+                    <div class="info-card-face info-card-face-back">
+                        <div class="info-content">
+                            <p>从小的观念都教育着我友好与和谐</p>
+                            <p>却也塑造了我的懦弱</p>
+                            <p>总是笑着说要乐观和无畏</p>
+                            <p>当困难和压迫来到自己身上的时候，我不知所措</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- <img src="" alt="插图"> -->
             </div>
-            <div class="about-item">
-                <div class="about-content">
-                    <h3>友好</h3>
-                    <p>对于不同的人或事总是有第一友好的印象</p>
-                    <p>尽管可能下一秒就被劝退</p>
-                    <p>我说我啊</p>
-                    <p>能不能别这么善良</p>
+
+            <div class="info-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="info-card-inner">
+                    <div class="info-card-face info-card-face-front">
+                        <div class="info-content">
+                            <h3>友好</h3>
+                        </div>
+                    </div>
+                    <div class="info-card-face info-card-face-back">
+                        <div class="info-content">
+                            <p>对于不同的人或事总是有第一友好的印象</p>
+                            <p>尽管可能下一秒就被劝退</p>
+                            <p>我说我啊</p>
+                            <p>能不能别这么善良</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- <img src="" alt="插图"> -->
             </div>
-            <div class="about-item">
-                <div class="about-content">
-                    <h3>双标</h3>
-                    <p>其实我也蛮了不起的</p>
-                    <p>偶尔也会看不起不如我或不友好的人</p>
-                    <p>这也蛮不公平的</p>
-                    <p>自己原来这么自私</p>
+        </div>
+        <div class="grid-container grid-6-4">
+            <div class="info-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="info-card-inner">
+                    <div class="info-card-face info-card-face-front">
+                        <div class="info-content">
+                            <h3>双标</h3>
+                        </div>
+                    </div>
+                    <div class="info-card-face info-card-face-back">
+                        <div class="info-content">
+                            <p>其实我也蛮了不起的</p>
+                            <p>偶尔也会看不起不如我或不友好的人</p>
+                            <p>这也蛮不公平的</p>
+                            <p>自己原来这么自私</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- <img src="" alt="插图"> -->
             </div>
-            <div class="about-item">
-                <div class="about-content">
-                    <h3>伪自恋</h3>
-                    <p>我是帅哥一枚</p>
-                    <p>可惜不过是语言上的幼稚</p>
-                    <p>毕竟其实在现实和内心都不被承认的说辞</p>
-                    <p>是用于安慰自己的东西（不过希望你快来夸夸我）</p>
+
+            <div class="info-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="info-card-inner">
+                    <div class="info-card-face info-card-face-front">
+                        <div class="info-content">
+                            <h3>伪自恋</h3>
+                        </div>
+                    </div>
+                    <div class="info-card-face info-card-face-back">
+                        <div class="info-content">
+                            <p>我是帅哥！</p>
+                            <p>可惜不过是语言上的幼稚</p>
+                            <p>毕竟其实在现实和内心都不被承认的说辞</p>
+                            <p>是用于安慰自己的东西</p>
+                            <p>（不过希望你快来夸夸我）</p>
+                        </div>
+                    </div>
                 </div>
-                <img src="images/mx-woof/woofx-1.png" style="top:15px; right:30px;" alt="插图">
             </div>
-            <div class="about-item">
-                <div class="about-content">
-                    <h3>泛二次元</h3>
-                    <p>不太喜欢深入一个圈子，又或圈地自萌</p>
-                    <p>否则总会遇到无法理解的事物</p>
-                    <p>ACG和相关文化是个很美好的产物</p>
-                    <p>但人多变味，莫名其妙的定义太多，享受作品本身就好</p>
+        </div>
+        <div class="grid-container grid-5-5">
+
+            <div class="info-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="info-card-inner">
+                    <div class="info-card-face info-card-face-front">
+                        <div class="info-content">
+                            <h3>泛二次元</h3>
+                        </div>
+                    </div>
+                    <div class="info-card-face info-card-face-back">
+                        <div class="info-content">
+                            <p>不太喜欢深入一个圈子，又或圈地自萌</p>
+                            <p>否则总会遇到无法理解的事物</p>
+                            <p>ACG和相关文化是个很美好的产物</p>
+                            <p>但人多变味，莫名其妙的定义太多，享受作品本身就好</p>
+                        </div>
+                    </div>
                 </div>
-                <img src="images/mx-woof/woofx-6.png" style="top:15px; right:30px; width:125px; height:125px;" alt="插图">
             </div>
-            <div class="about-item">
-                <div class="about-content">
-                    <h3>特立独行</h3>
-                    <p>半个理想主义者</p>
-                    <p>讨厌形式但理解某些现状</p>
-                    <p>爱好折腾，信奉情怀和浪漫</p>
-                    <p>经常被自己的无能打压，也在有些小成功的时刻被幸福包裹</p>
+
+            <div class="info-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="info-card-inner">
+                    <div class="info-card-face info-card-face-front">
+                        <div class="info-content">
+                            <h3>特立独行</h3>
+                        </div>
+                    </div>
+                    <div class="info-card-face info-card-face-back">
+                        <div class="info-content">
+                            <p>半个理想主义者</p>
+                            <p>讨厌形式但理解某些现状</p>
+                            <p>爱好折腾，信奉情怀和浪漫</p>
+                            <p>经常被自己的无能打压，也在成功的时刻被幸福包裹</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- <img src="" alt="插图"> -->
             </div>
-            <div class="about-item">
-                <div class="about-content">
-                    <h3>内耗</h3>
-                    <p>一边质疑世上没有永恒的爱</p>
-                    <p>一边期待美好的事情发生</p>
-                    <p>我也不是不快乐</p>
-                    <p>只是在反复推开和自我怀疑</p>
+        </div>
+        <div class="grid-container grid-4-6">
+            <div class="info-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="info-card-inner">
+                    <div class="info-card-face info-card-face-front">
+                        <div class="info-content">
+                            <h3>内耗</h3>
+                        </div>
+                    </div>
+                    <div class="info-card-face info-card-face-back">
+                        <div class="info-content">
+                            <p>一边质疑世上没有永恒的爱</p>
+                            <p>一边期待美好的事情发生</p>
+                            <p>我也不是不快乐</p>
+                            <p>只是在反复推开和自我怀疑</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- <img src="" alt="插图"> -->
             </div>
-            <div class="about-item">
-                <div class="about-content">
-                    <h3>假的理科生</h3>
-                    <p>逻辑思维差，理性思维差</p>
-                    <p>往往不喜欢用脑思考</p>
-                    <p>感觉更擅长的是理科边缘的一小部分</p>
-                    <p>并且喜欢这个标签...吧？</p>
+
+            <div class="info-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="info-card-inner">
+                    <div class="info-card-face info-card-face-front">
+                        <div class="info-content">
+                            <h3>假的理科生</h3>
+                        </div>
+                    </div>
+                    <div class="info-card-face info-card-face-back">
+                        <div class="info-content">
+                            <p>逻辑思维差，理性思维差</p>
+                            <p>往往不喜欢用脑思考</p>
+                            <p>感觉更擅长的是理科边缘的一小部分</p>
+                            <p>并且喜欢这个标签...吧？</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- <img src="" alt="插图"> -->
             </div>
+
         </div>
     </div>
 
@@ -230,5 +326,17 @@
     </div>
 
 </body>
+
+<footer>
+    <!-- AOS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 600,
+                delay: 0,
+            });
+        });
+    </script>
+</footer>
 
 </html>
