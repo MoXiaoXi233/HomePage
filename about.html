@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>内心 - 墨希小窝</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet preconnect" href="https://minio.moxiify.cn/chinese-font/LXGWWenKaiGB-Regular/result.css" type="text/css" media="all" onload="this.media='all'">
+    <link rel="stylesheet preconnect" href="https://minio.moxiify.cn/chinese-font/LXGWWenKaiGB-Regular/result.css"
+        type="text/css" media="all" onload="this.media='all'">
     <link rel="stylesheet" href="css/MoxDesign.css" />
     <link rel="stylesheet" href="css/aos.css" />
     <script src="js/MoxDesign.js"></script>
@@ -131,7 +132,7 @@
                 <p class="italic">I aspire to be a maverick, harnessing technology to reshape the world.</p>
             </div>
             <div class="footer">
-                <nav>
+                <nav class="hover_blur">
                     <ul>
                         <li><a href="index.html">首页</a></li>
                         <li><a href="https://note.moxiify.cn">博客</a></li>
@@ -141,7 +142,12 @@
                 </nav>
                 <info>© MoXiify <a href="https://icp.gov.moe/?keyword=20237807">萌ICP备20237807号</a></info>
             </div>
-            <img src="images/2bzai.png" alt="LinePic" class="ZaiZai" onclick="toggleTheme()" aria-label="日夜切换">
+            <div class="theme-toggle-container">
+                <img src="images/2bzai.png" alt="LinePic" class="ZaiZai" onclick="toggleTheme()" aria-label="日夜切换">
+                <div class="bounce-tooltip">
+                    <p>轻轻戳我~</p>
+                </div>
+            </div>
         </div>
         <div style="text-align: center; margin-top: 40px;">
             <p style="color: var(--text2-color); margin-bottom: 8px;">向下滑动了解更多</p>

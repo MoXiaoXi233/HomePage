@@ -359,7 +359,7 @@ a {
     right: 40px;
     width: 200px;
     height: 200px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .card-container-wrapper {
@@ -493,12 +493,14 @@ a {
 
 /* 一排显示两个 */
 .double-column {
-    grid-template-columns: repeat(2, 1fr); /* 2列，平分容器宽度 */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2列，平分容器宽度 */
 }
 
 /* 一排显示三个 */
 .triple-column {
-    grid-template-columns: repeat(3, 1fr); /* 3列，平分容器宽度 */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3列，平分容器宽度 */
 }
 
 /* 比例系统 */
@@ -873,4 +875,95 @@ a {
     border-radius: 25px;
     background-clip: padding-box;
     background-color: rgba(0, 0, 0, 0.30);
+}
+
+/* 工具提示采用固定定位 */
+.bounce-tooltip {
+    position: absolute;
+    left: calc(50vw);
+    /* 要与图片的 left 一致 */
+    top: calc(50vh - 100px);
+    /* 图片的 top 减去一个值，使其位于图片上方 */
+    transform: translate(-50%, -100%);
+    /* 水平居中，向上偏移 */
+    border: var(--border-color) 1px solid;
+    background: var(--card2-color);
+    padding: 8px 16px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.bounce-tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--card2-color);
+}
+
+.bounce-tooltip p {
+    margin: 0;
+    color: var(--text2-color);
+    font-weight: 500;
+    animation: bounce 1.2s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+
+/* 当鼠标悬停在图片上时，显示工具提示 */
+.ZaiZai:hover+.bounce-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-3px);
+    }
+
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+.hover_blur ul {
+    display: flex;
+    flex-direction:column;
+    list-style: none;
+    padding: 0;
+}
+
+.hover_blur li {
+    margin-right: 20px; /* 每个列表项之间的间距 */
+    transition: 400ms;
+}
+
+.hover_blur li a {
+    text-decoration: none;
+    color: var(--text2-color);
+    display: inline-block;
+    transition: 400ms;
+}
+
+.hover_blur li:hover a {
+    transform: scale(1.1);
+}
+
+.hover_blur:hover li:not(:hover) a {
+    filter: blur(4px);
+    transform: scale(0.9);
 }
