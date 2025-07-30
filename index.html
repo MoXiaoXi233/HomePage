@@ -515,6 +515,7 @@
     </div>
 
     <script>
+        // 模态窗口调用JS
         // 计算滚动条宽度 (此函数无需修改，本身就是通用的)
         function getScrollbarWidth() {
             const outer = document.createElement('div');
@@ -531,8 +532,6 @@
             outer.parentNode.removeChild(outer);
             return scrollbarWidth;
         }
-
-        // --- 修改后的模态窗口控制函数 ---
 
         // 打开指定的模态窗口
         function openModal(modal) {
@@ -551,7 +550,6 @@
             modal.classList.remove('active'); // 移除指定 modal 的 active 类
 
             // 动画结束后恢复滚动和 padding
-            // 注意：这里的 500ms 应该与你 CSS 中 .modal-overlay 的 transition 时间一致
             setTimeout(() => {
                 // 只有当没有其他模态窗是打开状态时，才恢复body样式
                 if (document.querySelector('.modal-overlay.active') === null) {
@@ -608,7 +606,7 @@
     </script>
 
     <script>
-        // 主题切换功能
+        // 夜间主题切换功能JS
         function toggleTheme() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';

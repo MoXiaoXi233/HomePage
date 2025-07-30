@@ -13,6 +13,7 @@
     --hover-color: #f8f8f8;
     --weak-text-color: #d0d0d0;
     --themecolor: #ea868f;
+    --modal-bg-color: rgba(255,255,255, 0.75);
 }
 
 [data-theme="dark"] {
@@ -29,6 +30,7 @@
     --text2-color: #bdb7af;
     --hover-color: #262a2b;
     --weak-text-color: #a1a1a1;
+    --modal-bg-color: rgba(39, 39, 39, 0.75);
 
     .ZaiZai,
     .LinePic {
@@ -976,7 +978,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: var(--modal-bg-color);
     backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
