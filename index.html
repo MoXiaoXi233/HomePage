@@ -218,7 +218,8 @@
                     </svg>
                     <span class="star-count">Loading...</span>
                 </div>
-                <svg class="tech-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 100 50">
+                <svg class="tech-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 100 50"
+                    style="fill: var(--text2-color);">
                     <path
                         d="m7.579 10.123 14.204 0c4.169 0.035 7.19 1.237 9.063 3.604 1.873 2.367 2.491 5.6 1.855 9.699-0.247 1.873-0.795 3.71-1.643 5.512-0.813 1.802-1.943 3.427-3.392 4.876-1.767 1.837-3.657 3.003-5.671 3.498-2.014 0.495-4.099 0.742-6.254 0.742l-6.36 0-2.014 10.07-7.367 0 7.579-38.001 0 0m6.201 6.042-3.18 15.9c0.212 0.035 0.424 0.053 0.636 0.053 0.247 0 0.495 0 0.742 0 3.392 0.035 6.219-0.3 8.48-1.007 2.261-0.742 3.781-3.321 4.558-7.738 0.636-3.71 0-5.848-1.908-6.413-1.873-0.565-4.222-0.83-7.049-0.795-0.424 0.035-0.83 0.053-1.219 0.053-0.353 0-0.724 0-1.113 0l0.053-0.053" />
                     <path
@@ -563,11 +564,13 @@
 
         // 1. 绑定所有触发器（打开按钮）的点击事件
         document.addEventListener('click', e => {
-            // 如果点击的是一个 class="modal-trigger" 的元素
-            if (e.target.matches('.modal-trigger')) {
+            // 检查点击元素自身或其祖先元素是否包含.modal-trigger类
+            const trigger = e.target.closest('.modal-trigger');
+
+            if (trigger) {
                 e.preventDefault();
                 // 通过 data-modal-target 属性找到对应的模态窗
-                const modalId = e.target.getAttribute('data-modal-target');
+                const modalId = trigger.getAttribute('data-modal-target');
                 const modal = document.querySelector(modalId);
                 openModal(modal);
             }

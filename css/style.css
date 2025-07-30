@@ -614,7 +614,7 @@ a {
 .star-count {
     font-size: 0.9em;
     font-weight: 500;
-    color: #333;
+    color: var(--text2-color);
 }
 
 @font-face {
