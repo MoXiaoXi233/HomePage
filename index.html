@@ -137,7 +137,7 @@
                         <li><a href="index.html">首页</a></li>
                         <li><a href="https://note.moxiify.cn">博客</a></li>
                         <li><a href="#projects">项目</a></li>
-                        <li><a href="about.html#antilogy">关于</a></li>
+                        <li><a href="#">探索</a></li>
                     </ul>
                 </nav>
                 <info>© MoXiify <a href="https://icp.gov.moe/?keyword=20237807">萌ICP备20237807号</a></info>
@@ -181,12 +181,13 @@
                 </div>
                 <img src="images/ACuteHeart.png" style="right: 0;" alt="内心插图">
             </div>
-            <div class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <a href="/" data-modal-target="#withher-modal" class="modal-trigger about-item" data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
                     <h2 class="no-decor">与<span>她</span></h2>
                 </div>
                 <img src="images/ACuteSu.png" alt="她的插图" class="BoldPic">
-            </div>
+            </a>
         </div>
         <div class="grid-container grid-6-4">
             <div class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
@@ -195,7 +196,8 @@
                 </div>
                 <!-- <img src="" alt="朋友插图"> -->
             </div>
-            <a href="about.html#antilogy" class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <a href="/" data-modal-target="#about-modal" class="modal-trigger about-item" data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
                     <h2 class="no-decor">更多...</h2>
                 </div>
@@ -313,6 +315,328 @@
             badge.classList.remove('loading');
         });
     </script>
+
+    <!-- 与她 - 模态窗口 -->
+    <div class="modal-overlay" id="withher-modal">
+        <div class="modal-content">
+            <div class="close-btn modal-close">
+                <div class="icon-cancel-circle" style="font-size:32px"></div>
+            </div>
+            <div class="withher-container">
+                <div class="withher-text">
+                    <h1>在一起已经 <span id="days" class="highlight">?</span> 天</h1>
+                    <p class="date">2019-11-25 至今</p>
+                    <p class="author">MoXiify ❤ RuoSuck</p>
+                </div>
+                <div class="withher-image">
+                    <img src="images/WithHer/Oneday.png" alt="在一起插图">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 关于更多 - 模态窗口 -->
+    <div class="modal-overlay" id="about-modal">
+        <div class="modal-content">
+            <div class="close-btn modal-close">
+                <div class="icon-cancel-circle" style="font-size:32px"></div>
+            </div>
+            <div id="antilogy">
+                <h2>矛盾的我</h2>
+                <!-- 第一个大卡片 -->
+                <div class="grid-container">
+                    <div class="about-item main-about" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                        <div class="about-content">
+                            <p>
+                            <p>这里的介绍有别于 希记 中的我</p>
+                            <p>我是个很弱小很愚昧的人</p>
+                            <p>我会因为自己的小成就自傲</p>
+                            <p>关于此，我能写出很多我的故事，并且有许多美丽优雅的表达</p>
+                            <p>可惜这里的空白处太小，我写不下</p>
+                            <p>
+                        </div>
+                        <img src="images/mx-woof/woofx-3.png" style="right: 0;" alt="可爱希角色形象" class="LinePic">
+                    </div>
+                </div>
+
+                <!-- 四个小卡片 -->
+                <div class="grid-container grid-5-5">
+                    <div class="info-card">
+                        <div class="info-card-inner">
+                            <div class="info-card-face info-card-face-front">
+                                <div class="info-content">
+                                    <h3>自卑</h3>
+                                </div>
+                            </div>
+                            <div class="info-card-face info-card-face-back">
+                                <div class="info-content">
+                                    <p>从小的观念都教育着我友好与和谐</p>
+                                    <p>却也塑造了我的懦弱</p>
+                                    <p>总是笑着说要乐观和无畏</p>
+                                    <p>当困难和压迫来到自己身上的时候，我不知所措</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-inner">
+                            <div class="info-card-face info-card-face-front">
+                                <div class="info-content">
+                                    <h3>友好</h3>
+                                </div>
+                            </div>
+                            <div class="info-card-face info-card-face-back">
+                                <div class="info-content">
+                                    <p>对于不同的人或事总是有第一友好的印象</p>
+                                    <p>尽管可能下一秒就被劝退</p>
+                                    <p>我说我啊</p>
+                                    <p>能不能别这么善良</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container grid-6-4">
+                    <div class="info-card">
+                        <div class="info-card-inner">
+                            <div class="info-card-face info-card-face-front">
+                                <div class="info-content">
+                                    <h3>双标</h3>
+                                </div>
+                            </div>
+                            <div class="info-card-face info-card-face-back">
+                                <div class="info-content">
+                                    <p>其实我也蛮了不起的</p>
+                                    <p>偶尔也会看不起不如我或不友好的人</p>
+                                    <p>这也蛮不公平的</p>
+                                    <p>自己原来这么自私</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-inner">
+                            <div class="info-card-face info-card-face-front">
+                                <div class="info-content">
+                                    <h3>伪自恋</h3>
+                                </div>
+                            </div>
+                            <div class="info-card-face info-card-face-back">
+                                <div class="info-content">
+                                    <p>我是帅哥！</p>
+                                    <p>可惜不过是语言上的幼稚</p>
+                                    <p>毕竟其实在现实和内心都不被承认的说辞</p>
+                                    <p>是用于安慰自己的东西</p>
+                                    <p>（不过希望你快来夸夸我）</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container grid-5-5">
+
+                    <div class="info-card">
+                        <div class="info-card-inner">
+                            <div class="info-card-face info-card-face-front">
+                                <div class="info-content">
+                                    <h3>泛二次元</h3>
+                                </div>
+                            </div>
+                            <div class="info-card-face info-card-face-back">
+                                <div class="info-content">
+                                    <p>不太喜欢深入一个圈子，又或圈地自萌</p>
+                                    <p>否则总会遇到无法理解的事物</p>
+                                    <p>ACG和相关文化是个很美好的产物</p>
+                                    <p>但人多变味，莫名其妙的定义太多，享受作品本身就好</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-inner">
+                            <div class="info-card-face info-card-face-front">
+                                <div class="info-content">
+                                    <h3>特立独行</h3>
+                                </div>
+                            </div>
+                            <div class="info-card-face info-card-face-back">
+                                <div class="info-content">
+                                    <p>半个理想主义者</p>
+                                    <p>讨厌形式但理解某些现状</p>
+                                    <p>爱好折腾，信奉情怀和浪漫</p>
+                                    <p>经常被自己的无能打压，也在成功的时刻被幸福包裹</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container grid-4-6">
+                    <div class="info-card">
+                        <div class="info-card-inner">
+                            <div class="info-card-face info-card-face-front">
+                                <div class="info-content">
+                                    <h3>内耗</h3>
+                                </div>
+                            </div>
+                            <div class="info-card-face info-card-face-back">
+                                <div class="info-content">
+                                    <p>一边质疑世上没有永恒的爱</p>
+                                    <p>一边期待美好的事情发生</p>
+                                    <p>我也不是不快乐</p>
+                                    <p>只是在反复推开和自我怀疑</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-inner">
+                            <div class="info-card-face info-card-face-front">
+                                <div class="info-content">
+                                    <h3>假的理科生</h3>
+                                </div>
+                            </div>
+                            <div class="info-card-face info-card-face-back">
+                                <div class="info-content">
+                                    <p>逻辑思维差，理性思维差</p>
+                                    <p>往往不喜欢用脑思考</p>
+                                    <p>感觉更擅长的是理科边缘的一小部分</p>
+                                    <p>并且喜欢这个标签...吧？</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 计算滚动条宽度 (此函数无需修改，本身就是通用的)
+        function getScrollbarWidth() {
+            const outer = document.createElement('div');
+            outer.style.visibility = 'hidden';
+            outer.style.overflow = 'scroll';
+            outer.style.msOverflowStyle = 'scrollbar';
+            document.body.appendChild(outer);
+
+            const inner = document.createElement('div');
+            outer.appendChild(inner);
+
+            const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+
+            outer.parentNode.removeChild(outer);
+            return scrollbarWidth;
+        }
+
+        // --- 修改后的模态窗口控制函数 ---
+
+        // 打开指定的模态窗口
+        function openModal(modal) {
+            if (modal == null) return;
+            modal.classList.add('active'); // 给指定的 modal 添加 active 类
+
+            // 获取滚动条宽度并应用到 body，防止页面跳动
+            const scrollbarWidth = getScrollbarWidth();
+            document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+        }
+
+        // 关闭指定的模态窗口
+        function closeModal(modal) {
+            if (modal == null) return;
+            modal.classList.remove('active'); // 移除指定 modal 的 active 类
+
+            // 动画结束后恢复滚动和 padding
+            // 注意：这里的 500ms 应该与你 CSS 中 .modal-overlay 的 transition 时间一致
+            setTimeout(() => {
+                // 只有当没有其他模态窗是打开状态时，才恢复body样式
+                if (document.querySelector('.modal-overlay.active') === null) {
+                    document.body.style.overflow = '';
+                    document.body.style.paddingRight = '';
+                }
+            }, 500);
+        }
+
+        // --- 通用的事件绑定 ---
+
+        // 1. 绑定所有触发器（打开按钮）的点击事件
+        document.addEventListener('click', e => {
+            // 如果点击的是一个 class="modal-trigger" 的元素
+            if (e.target.matches('.modal-trigger')) {
+                e.preventDefault();
+                // 通过 data-modal-target 属性找到对应的模态窗
+                const modalId = e.target.getAttribute('data-modal-target');
+                const modal = document.querySelector(modalId);
+                openModal(modal);
+            }
+        });
+
+        // 2. 绑定所有关闭按钮的点击事件
+        document.addEventListener('click', e => {
+            // 检查点击的元素或其父元素中是否有 .modal-close
+            const closeButton = e.target.closest('.modal-close');
+
+            if (closeButton) { // 如果找到了关闭按钮
+                e.preventDefault();
+                // 找到它所在的那个模态窗并关闭
+                const modal = closeButton.closest('.modal-overlay');
+                closeModal(modal);
+            }
+        });
+
+        // 3. 绑定所有模态窗遮罩层的点击事件（点击外部关闭）
+        document.addEventListener('click', e => {
+            // 如果点击的是一个 class="modal-overlay" 的元素本身（而不是其子元素）
+            if (e.target.matches('.modal-overlay')) {
+                closeModal(e.target);
+            }
+        });
+
+
+        // 4. 按 ESC 键关闭最上层的模态框
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                // 找到当前处于 active 状态的模态窗并关闭它
+                const activeModal = document.querySelector('.modal-overlay.active');
+                closeModal(activeModal);
+            }
+        });
+    </script>
+
+    <script>
+        // 主题切换功能
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            const initialTheme = savedTheme === 'auto' || !savedTheme ? systemTheme : savedTheme;
+            document.documentElement.setAttribute('data-theme', initialTheme);
+        })();
+    </script>
+
+    <script>
+        // 在一起天数计算JS
+        // 起始日期
+        const startDate = new Date('2019-11-25');
+        const today = new Date();
+
+        // 计算相差天数（UTC处理避免时区问题）
+        const diffTime = today.getTime() - startDate.getTime();
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+        // 插入天数到页面
+        document.getElementById('days').textContent = diffDays;
+    </script>
 </body>
 
 <footer>
@@ -326,6 +650,5 @@
         });
     </script>
 </footer>
-
 
 </html>
