@@ -181,13 +181,13 @@
                 </div>
                 <img src="images/ACuteHeart.png" style="right: 0;" alt="内心插图">
             </div>
-            <a href="/" data-modal-target="#withher-modal" class="modal-trigger about-item" data-aos="fade-up"
+            <div data-modal-target="#withher-modal" class="modal-trigger about-item" data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
                     <h2 class="no-decor">与<span>她</span></h2>
                 </div>
                 <img src="images/ACuteSu.png" alt="她的插图" class="BoldPic">
-            </a>
+            </div>
         </div>
         <div class="grid-container grid-6-4">
             <div class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
@@ -196,13 +196,13 @@
                 </div>
                 <!-- <img src="" alt="朋友插图"> -->
             </div>
-            <a href="/" data-modal-target="#about-modal" class="modal-trigger about-item" data-aos="fade-up"
+            <div href="/" data-modal-target="#about-modal" class="modal-trigger about-item" data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom">
                 <div class="about-content">
                     <h2 class="no-decor">更多...</h2>
                 </div>
                 <!-- <img src="" alt="更多插图"> -->
-            </a>
+            </div>
         </div>
     </div>
 
@@ -626,17 +626,18 @@
     </script>
 
     <script>
-        // 在一起天数计算JS
-        // 起始日期
-        const startDate = new Date('2019-11-25');
-        const today = new Date();
+        (function () {
+            const LovestartDate = new Date('2019-11-25');
+            const today = new Date();
 
-        // 计算相差天数（UTC处理避免时区问题）
-        const diffTime = today.getTime() - startDate.getTime();
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+            const diffTime = today.getTime() - LovestartDate.getTime();
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
 
-        // 插入天数到页面
-        document.getElementById('days').textContent = diffDays;
+            const daysElement = document.getElementById('days');
+            if (daysElement) {
+                daysElement.textContent = diffDays;
+            }
+        })();
     </script>
 </body>
 

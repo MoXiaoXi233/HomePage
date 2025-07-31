@@ -307,6 +307,10 @@ h3.no-decor::before {
     display: none !important;
 }
 
+.works-content {
+  flex: 1 1 100%;
+}
+
 .about-content,
 .works-content {
     position: absolute;
@@ -404,6 +408,7 @@ a {
     align-items: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    flex-wrap: wrap;
 }
 
 .works-item:hover,
@@ -1068,4 +1073,200 @@ a {
   max-width: 800px;
   height: auto;
   border-radius: 8px;
+}
+
+/* --- 针对平板及以下设备（屏幕宽度小于等于 1092px 或更小，根据 Common_Card/Spec_Card 宽度调整）--- */
+/* 这里的 1092px 是 Common_Card 和 Spec_Card 的宽度，当屏幕小于这个宽度时，它们就需要调整 */
+@media screen and (max-width: 1100px) {
+    body, html {
+        min-width: unset; 
+        padding: 0 15px; 
+    }
+
+    .Spec_Card,
+    .Common_Card {
+        width: 100%; 
+        padding: 0; 
+        margin-bottom: 60px; 
+    }
+
+    .Spec_Card {
+        padding-top: 20px;
+    }
+
+    .container {
+        width: auto; 
+        height: auto; 
+        padding: 20px 30px; 
+    }
+
+    .header {
+        flex-direction: column; 
+        align-items: center; 
+        margin-bottom: 20px;
+    }
+
+    .home-title {
+        font-size: 38px; 
+        margin-top: 15px; 
+    }
+
+    .avatar-container {
+        margin-bottom: 10px; 
+    }
+
+    .content {
+        height: auto; 
+        width: auto;
+    }
+
+    .hover_blur ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .footer {
+        margin-top: 20px; 
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column; 
+        align-items: center; 
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin-bottom: 10px; 
+        margin-right: 0; 
+    }
+
+    .ZaiZai {
+        position: relative; 
+        bottom: auto;
+        right: auto;
+        margin-top: 20px; 
+        width: 120px; 
+        height: 120px;
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 隐藏工具提示 */
+    .bounce-tooltip {
+        display: none !important;
+    }
+
+    .card-container-wrapper {
+        margin: 0 -20px 10px -20px; 
+        padding-left: 20px; 
+        width: calc(100% + 40px); 
+        height: auto; 
+    }
+
+    /* 作品和关于容器 */
+    .works-container,
+    .about-container {
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    .works-item,
+    .about-item {
+        margin-bottom: 13px; 
+        min-height: 140px; 
+    }
+
+    .about-item img {
+        margin-top: 15px; 
+        width: 100px; 
+        height: 100px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-content,
+    .works-content {
+        position: relative; 
+        left: auto;
+    }
+
+    /* Grid 布局在手机端全部变成单列 */
+    .grid-container {
+        grid-template-columns: 1fr !important; /* 强制单列 */
+        gap: 15px; /* 调整间距 */
+    }
+
+    .grid-item {
+        min-height: auto; 
+        padding: 1rem; 
+        text-align: center;
+    }
+
+    .grid-item img {
+        position: relative; 
+        bottom: auto;
+        right: auto;
+        margin-top: 15px;
+        width: clamp(80px, 30%, 150px); 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tech-icon {
+        position: relative; 
+        top: auto;
+        right: auto;
+        margin-bottom: 10px;
+        display: block;
+        margin-left: auto;
+    }
+
+    .github-badge {
+        position: relative; 
+        top: auto;
+        left: auto;
+        margin-bottom: 10px;
+        justify-content: center; 
+    }
+
+    /* 模态窗口调整 */
+    .modal-content {
+        width: 95%; 
+        padding: 20px; 
+        max-height: 90vh; 
+    }
+
+    .close-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 24px; 
+    }
+
+    /* withher 模态窗口内容调整 */
+    .withher-text h1 {
+        font-size: 2rem; 
+    }
+
+}
+
+/* 针对更小的手机屏幕（例如，屏幕宽度小于等于 480px）进一步优化 */
+@media screen and (max-width: 480px) {
+    body, html {
+        padding: 0 10px;
+    }
+
+    .home-title {
+        font-size: 34px; 
+    }
+
+    .avatar-container::after {
+        width: 8px;
+        height: 8px;
+        border: 3px solid var(--card-color);
+    }
+
 }
