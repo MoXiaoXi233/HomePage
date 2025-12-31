@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="force-rendering" content="webkit">
-    <meta name="description" content="墨希的个人引导页 - MoXiify' HomePage">
+    <link rel="canonical" href="https://www.moxiify.cn/" />
+    <meta name="description" content="MoXiify（墨希）的个人主页，包含项目展示、技术记录与创作实验，一个持续构建中的个人空间。" />
     <title>墨希小窝 - With Love</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet preconnect" href="https://webcdn.cn-nb1.rains3.com/Fonts/LXGWWenKaiGB-Regular/result.css"
-        type="text/css" media="all" onload="this.media='all'">
+    <link rel="stylesheet preconnect"
+        href="https://1820959697.v.123pan.cn/1820959697/CDN/Fonts/Fonts/LXGWWenKaiGB-Regular/result.css" type="text/css"
+        media="all" onload="this.media='all'">
     <link rel="stylesheet" href="css/MoxDesign.css" />
     <link rel="stylesheet" href="css/aos.css" />
     <script src="js/MoxDesign.js"></script>
@@ -316,55 +318,6 @@
         <p>持续开发中，Designed by MoXi，请勿转载</p>
     </div>
 
-
-    <script>
-        // 获取 GitHub Star 数量的函数
-        async function fetchGitHubStars(repo) {
-            try {
-                // 使用代理避免 CORS 问题（可选）
-                const proxyUrl = 'https://api.allorigins.win/raw?url=';
-                const response = await fetch(`${proxyUrl}https://api.github.com/repos/${repo}`);
-
-                if (!response.ok) throw new Error('Failed to fetch');
-                const data = await response.json();
-                return data.stargazers_count;
-            } catch (error) {
-                console.error('Error fetching GitHub stars:', error);
-                return null;
-            }
-        }
-
-        // DOM 加载完成后执行
-        document.addEventListener('DOMContentLoaded', async () => {
-            const badge = document.querySelector('.github-badge');
-            const countElement = document.querySelector('.star-count');
-
-            // 添加加载状态样式
-            badge.classList.add('loading');
-
-            // 获取仓库信息
-            const repo = 'MoXiaoXi233/PureSuck-theme';
-            const stars = await fetchGitHubStars(repo);
-
-            // 更新显示
-            if (stars !== null) {
-                countElement.textContent = stars.toLocaleString();
-                badge.title = `View ${repo} on GitHub`;
-                badge.style.cursor = 'pointer';
-
-                // 添加点击跳转
-                badge.addEventListener('click', () => {
-                    window.open(`https://github.com/${repo}`, '_blank');
-                });
-            } else {
-                countElement.textContent = 'N/A';
-                badge.style.opacity = '0.5';
-            }
-
-            badge.classList.remove('loading');
-        });
-    </script>
-
     <!-- 与她 - 模态窗口 -->
     <div class="modal-overlay" id="withher-modal">
         <div class="modal-content">
@@ -667,6 +620,75 @@
                 duration: 600,
                 delay: 0,
             });
+        });
+    </script>
+
+    <!-- 与他天数显示 -->>
+    <script>
+        (function () {
+            const LovestartDate = new Date('2019-11-25');
+            const today = new Date();
+
+
+            const diffTime = today.getTime() - LovestartDate.getTime();
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+
+
+            const daysElement = document.getElementById('days');
+            if (daysElement) {
+                daysElement.textContent = diffDays;
+            }
+        })();
+    </script>
+
+    <!-- Github 数据获取 -->
+    <script>
+        // 获取 GitHub Star 数量的函数
+        async function fetchGitHubStars(repo) {
+            try {
+                const res = await fetch(`https://api.github.com/repos/${repo}`, {
+                    headers: {
+                        "Accept": "application/vnd.github+json"
+                    }
+                });
+
+                if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+                const data = await res.json();
+                return Number(data.stargazers_count);
+            } catch (e) {
+                console.error("Error fetching GitHub stars:", e);
+                return null;
+            }
+        }
+
+        // DOM 加载完成后执行
+        document.addEventListener('DOMContentLoaded', async () => {
+            const badge = document.querySelector('.github-badge');
+            const countElement = document.querySelector('.star-count');
+
+            // 添加加载状态样式
+            badge.classList.add('loading');
+
+            // 获取仓库信息
+            const repo = 'MoXiaoXi233/PureSuck-theme';
+            const stars = await fetchGitHubStars(repo);
+
+            // 更新显示
+            if (stars !== null) {
+                countElement.textContent = stars.toLocaleString();
+                badge.title = `View ${repo} on GitHub`;
+                badge.style.cursor = 'pointer';
+
+                // 添加点击跳转
+                badge.addEventListener('click', () => {
+                    window.open(`https://github.com/${repo}`, '_blank');
+                });
+            } else {
+                countElement.textContent = 'N/A';
+                badge.style.opacity = '0.5';
+            }
+
+            badge.classList.remove('loading');
         });
     </script>
 </footer>
