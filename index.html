@@ -13,11 +13,14 @@
     <link rel="preconnect" href="https://1820959697.v.123pan.cn" crossorigin>
     <link rel="stylesheet" href="https://1820959697.v.123pan.cn/1820959697/CDN/Fonts/Fonts/LXGWWenKaiGB-Regular/result.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/MoxDesign.css" />
-    <link rel="stylesheet" href="css/aos.css" />
     <script src="js/MoxDesign.js"></script>
-    <script src="js/pjax.min.js"></script>
     <script src="js/pace.min.js"></script>
-    <script src="js/aos.js"></script>
+    <script src="js/lib/Swup/Swup.umd.min.js"></script>
+    <script src="js/lib/Swup/scroll-plugin.js"></script>
+    <script src="js/lib/Swup/preload-plugin.js"></script>
+    <script src="js/lib/Swup/head-plugin.js"></script>
+    <script src="js/swup-init.js"></script>
+    <script src="js/ps-animate.js"></script>
 
     <!-- Initial Theme Script -->
     <script>
@@ -137,35 +140,13 @@
     </script>
 
 
-    <script>
-        // 初始化 Pjax
-        document.addEventListener('DOMContentLoaded', function () {
-
-            var pjax = new Pjax({
-                history: true,
-                scrollRestoration: true,
-                cacheBust: false,
-                timeout: 6500,
-                elements: ["a:not([target='_blank'])"], // 只对非外链的a标签启用pjax
-                selectors: [ // 需要更新的元素选择器
-                    "title",
-                    "body"
-                ],
-            });
-
-            // 在页面加载完成后执行的函数
-            document.addEventListener('pjax:complete', function () {
-                // 更新主题图标
-                const savedTheme = localStorage.getItem('theme') || 'auto';
-                updateIcon(savedTheme);
-            });
-        });
-    </script>
+    <!-- Swup Init in js/swup-init.js -->
 </head>
 
 <body>
+    <div id="swup" data-ps-page-type="page">
     <div class="Spec_Card">
-        <div class="container" data-aos="zoom-out">
+        <div class="container">
             <div class="header">
                 <div class="avatar-container">
                     <img src="images/avatar.webp" alt="Avatar" class="avatar">
@@ -198,7 +179,7 @@
             </div>
 
         </div>
-        <div style="text-align: center; margin-top: 40px;">
+        <div class="scroll-hint" style="text-align: center; margin-top: 40px;">
             <p style="color: var(--text2-color); margin-bottom: 8px;">向下滑动了解更多</p>
             <i class="icon-down-open" style="color: var(--text2-color);"></i>
         </div>
@@ -208,7 +189,7 @@
         <h2>关于我</h2>
         <!-- 第一个大卡片 -->
         <div class="grid-container single-column">
-            <div class="about-item main-about" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="about-item main-about">
                 <div class="about-content">
                     <p>
                     <p>我总想：</p>
@@ -224,14 +205,14 @@
 
         <!-- 四个小卡片 -->
         <div class="grid-container grid-4-6">
-            <div class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="about-item">
                 <div class="about-content">
                     <h2 class="no-decor">与内心</h2>
                 </div>
                 <img src="images/ACuteHeart.webp" style="right: 0;" alt="内心插图">
             </div>
-            <div data-modal-target="#withher-modal" class="modal-trigger about-item" data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom">
+            <div data-modal-target="#withher-modal" class="modal-trigger about-item"
+               >
                 <div class="about-content">
                     <h2 class="no-decor">与<span>她</span></h2>
                 </div>
@@ -239,14 +220,14 @@
             </div>
         </div>
         <div class="grid-container grid-6-4">
-            <div class="about-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="about-item">
                 <div class="about-content">
                     <h2 class="no-decor">与朋友</h2>
                 </div>
                 <!-- <img src="" alt="朋友插图"> -->
             </div>
-            <div href="/" data-modal-target="#about-modal" class="modal-trigger about-item" data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom">
+            <div href="/" data-modal-target="#about-modal" class="modal-trigger about-item"
+               >
                 <div class="about-content">
                     <h2 class="no-decor">更多...</h2>
                 </div>
@@ -259,7 +240,7 @@
         <h2>作品</h2>
         <div class="grid-container single-column">
             <a href="https://github.com/MoXiaoXi233/PureSuck-theme" target="_blank" class="works-item"
-                data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+               >
                 <div class="github-badge">
                     <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
                         <path fill-rule="evenodd"
@@ -283,29 +264,29 @@
             </a>
         </div>
         <div class="grid-container double-column grid-4-6">
-            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <a href="#" class="works-item">
                 <div class="works-content">
                     <p>尚未开发</p>
                 </div>
             </a>
-            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <a href="#" class="works-item">
                 <div class="works-content">
                     <p>尚未开发</p>
                 </div>
             </a>
         </div>
         <div class="grid-container triple-column">
-            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <a href="#" class="works-item">
                 <div class="works-content">
                     <p>尚未开发</p>
                 </div>
             </a>
-            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <a href="#" class="works-item">
                 <div class="works-content">
                     <p>尚未开发</p>
                 </div>
             </a>
-            <a href="#" class="works-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <a href="#" class="works-item">
                 <div class="works-content">
                     <p>尚未开发</p>
                 </div>
@@ -345,7 +326,7 @@
                 <h2>矛盾的我</h2>
                 <!-- 第一个大卡片 -->
                 <div class="grid-container">
-                    <div class="about-item main-about" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <div class="about-item main-about">
                         <div class="about-content">
                             <p>
                             <p>这里的介绍有别于 希记 中的我</p>
@@ -516,6 +497,7 @@
         </div>
     </div>
 
+    </div>
     <script>
         // 模态窗口调用JS
         // 计算滚动条宽度 (此函数无需修改，本身就是通用的)
@@ -612,16 +594,6 @@
 </body>
 
 <footer>
-    <!-- AOS -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            AOS.init({
-                duration: 600,
-                delay: 0,
-            });
-        });
-    </script>
-
     <!-- 与他天数显示 -->
     <script>
         (function () {

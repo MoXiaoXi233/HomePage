@@ -13,7 +13,26 @@
 	--hover-color: #f8f8f8;
     --weak-text-color: #d0d0d0;
     --themecolor: #ea868f;
+    --themehovercolor: #d1606e;
     --modal-bg-color: rgba(255,255,255, 0.75);
+    --card-radius: 0.75rem;
+    --card-shadow: 0 0 6px #00000008;
+    --card-hover-bg: color-mix(in srgb, var(--themecolor) 3%, var(--card-color));
+    --card-hover-border: color-mix(in srgb, var(--themehovercolor) 45%, var(--border-color));
+    --ps-anim-duration-fast: 180ms;
+    --ps-anim-duration-normal: 240ms;
+    --ps-anim-duration-slow: 320ms;
+    --ps-anim-duration-vt: 380ms;
+    --ps-anim-ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ps-anim-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ps-anim-translate-small: 12px;
+    --ps-anim-translate-medium: 24px;
+    --ps-anim-translate-large: 48px;
+    --ps-anim-scale-exit: 0.96;
+    --ps-anim-scale-enter: 0.98;
+    --ps-vt-duration: var(--ps-anim-duration-vt);
+    --ps-vt-easing: cubic-bezier(0.22, 0.68, 0.35, 1.0);
+    --ps-vt-radius: 0.85rem;
 }
 
 [data-theme="dark"] {
@@ -45,7 +64,8 @@
         filter: brightness(0.7);
     }
 
-    --themecolor: #b45864;
+    --themecolor: #bf677a;
+    --themehovercolor: #d6728a;
 }
 
 body,
@@ -61,6 +81,20 @@ html {
     font-weight: 400;
     min-width: 950px;
     scroll-behavior: smooth;
+}
+
+html.ps-animating {
+    scroll-behavior: auto !important;
+    scrollbar-gutter: stable;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.ps-animating *,
+    html.ps-animating *::before,
+    html.ps-animating *::after {
+        transition: none !important;
+        animation: none !important;
+    }
 }
 
 .Spec_Card {
@@ -82,8 +116,8 @@ html {
 .container {
     background-color: var(--card-color);
     border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
-    box-shadow: 0 0 6px #00000008;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
     padding: 40px 70px;
     width: 950px;
     height: 520px;
@@ -397,23 +431,35 @@ a {
 .about-item {
     background-color: var(--card-color);
     border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
-    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .05);
-    transition: all .3s cubic-bezier(0.345, 0.045, 0.345, 1);
+    border-radius: var(--card-radius);
+    box-shadow: none;
     padding: 20px;
     position: relative;
     min-height: 185px;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
     cursor: pointer;
     flex-wrap: wrap;
+    transform: translateY(0);
+    transition: transform .35s ease, border-color .35s ease, background-color .35s ease;
 }
 
 .works-item:hover,
 .about-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, .06);
+    transform: translateY(-2px);
+    background-color: var(--card-hover-bg);
+    border-color: var(--card-hover-border);
+}
+
+.works-item:active,
+.about-item:active {
+    transform: scale(0.98);
+}
+
+.works-item:focus-visible {
+    outline: none;
+    border-color: var(--themecolor);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--themecolor) 35%, transparent);
 }
 
 .about-item span {
@@ -441,23 +487,23 @@ a {
 .info-card-inner {
     background-color: var(--card-color);
     border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
-    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .05);
-    transition: color .3s cubic-bezier(0.345, 0.045, 0.345, 1);
+    border-radius: var(--card-radius);
+    box-shadow: none;
     position: relative;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
     cursor: pointer;
     width: 100%;
     height: 100%;
-    position: relative;
     transform-style: preserve-3d;
-    transition: transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
+        border-color .35s ease,
+        background-color .35s ease;
 }
 
 .info-card:hover .info-card-inner {
     transform: rotateY(180deg);
+    border-color: var(--card-hover-border);
 }
 
 .info-card-face {
@@ -468,7 +514,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.75rem;
+    border-radius: var(--card-radius);
 }
 
 .info-card-face-front {
@@ -534,12 +580,22 @@ a {
 .grid-item {
     background: var(--card-color);
     border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
+    border-radius: var(--card-radius);
     padding: 1.5rem;
     min-height: 200px;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform .35s ease, border-color .35s ease, background-color .35s ease;
     overflow: hidden;
+}
+
+.grid-item:hover {
+    transform: translateY(-2px);
+    background-color: var(--card-hover-bg);
+    border-color: var(--card-hover-border);
+}
+
+.grid-item:active {
+    transform: scale(0.98);
 }
 
 /* 图片自适应系统 */
@@ -1008,6 +1064,10 @@ a {
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     padding: 40px;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
 }
 
 .modal-overlay.active .modal-content {
